@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 keywords = ["computer vision", "multimodal", "spatial intelligence", "MLLM"]
 dependencies = [
-    "transformers==4.37.2",
+    "transformers>=4.37.2",
     "Pillow",
     "numpy",
     "setuptools",

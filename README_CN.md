@@ -35,8 +35,8 @@
 ## 发布信息
 目前，我们基于流行的开源基础模型构建 SenseNova-SI，以最大化与现有研究流程的兼容性。
 在本次发布中，我们推出
-[**SenseNova-SI-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-InternVL3-2B) 与 
-[**SenseNova-SI-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-InternVL3-8B), 
+[**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B) 与 
+[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B), 
 在四个近期发布的空间智能基准测试（**VSI**、**MMSI**、**MindCube**、**ViewSpatial**）上，
 在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art）。
 
@@ -76,7 +76,7 @@
       <td>SpatialMLLM-4B</td><td>45.98</td><td>26.10</td><td>33.46</td><td>34.66</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-InternVL3-2B</strong></td>
+      <td><strong>SenseNova-SI-1.1-InternVL3-2B</strong></td>
       <td><strong>58.47</strong></td>
       <td><strong>35.50</strong></td>
       <td><strong>71.35</strong></td>
@@ -101,7 +101,7 @@
       <td>ViLaSR-7B</td><td>44.63</td><td>30.20</td><td>35.10</td><td>35.71</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-InternVL3-8B</strong></td>
+      <td><strong>SenseNova-SI-1.1-InternVL3-8B</strong></td>
       <td><strong>62.80</strong></td>
       <td><strong>37.90</strong></td>
       <td><strong>89.33</strong></td>
@@ -146,7 +146,7 @@ source .venv/bin/activate
 ```bash
 python example.py \
   --question "Hello" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
 ```
 
 ### 示例
@@ -159,7 +159,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q1_1.png \
   --question "<image>\nWhich figure is a top-down view of the given shape?\nOptions:\nA: A\nB: B\nC: C\nD: D" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 
@@ -180,7 +180,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "<image><image>\nBased on these two views showing the same scene: in which direction did I move from the first view to the second view?\nA. Directly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B
 ```
 
@@ -212,7 +212,7 @@ python example.py \
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 

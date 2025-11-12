@@ -36,8 +36,8 @@ cultivating multi-faceted spatial understanding within the SenseNova-SI family o
 ## Release Information
 Currently, we build SenseNova-SI upon popular open-source foundation models to maximize compatibility with existing research pipelines.
 In this release, we present 
-[**SenseNova-SI-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-InternVL3-2B) and 
-[**SenseNova-SI-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-InternVL3-8B), 
+[**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B) and 
+[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B), 
 which achieve state-of-the-art performance among open-source models of comparable size across four recent spatial intelligence benchmarks: 
 **VSI**, **MMSI**, **MindCube**, and **ViewSpatial**.
 
@@ -77,7 +77,7 @@ which achieve state-of-the-art performance among open-source models of comparabl
       <td>SpatialMLLM-4B</td><td>45.98</td><td>26.10</td><td>33.46</td><td>34.66</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-InternVL3-2B</strong></td>
+      <td><strong>SenseNova-SI-1.1-InternVL3-2B</strong></td>
       <td><strong>58.47</strong></td>
       <td><strong>35.50</strong></td>
       <td><strong>71.35</strong></td>
@@ -102,7 +102,7 @@ which achieve state-of-the-art performance among open-source models of comparabl
       <td>ViLaSR-7B</td><td>44.63</td><td>30.20</td><td>35.10</td><td>35.71</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-InternVL3-8B</strong></td>
+      <td><strong>SenseNova-SI-1.1-InternVL3-8B</strong></td>
       <td><strong>62.80</strong></td>
       <td><strong>37.90</strong></td>
       <td><strong>89.33</strong></td>
@@ -148,7 +148,7 @@ A simple image-free test to verify environment setup and download the model.
 ```bash
 python example.py \
   --question "Hello" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
 ```
 
 ### Examples
@@ -161,7 +161,7 @@ This example is from the `MultiV` subset of [SITE-Bench](https://wenqi-wang20.gi
 python example.py \
   --image_paths examples/Q1_1.png \
   --question "<image>\nWhich figure is a top-down view of the given shape?\nOptions:\nA: A\nB: B\nC: C\nD: D" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 
@@ -183,7 +183,7 @@ This example is from the `Rotation` subset of [MindCube](https://mind-cube.githu
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "<image><image>\nBased on these two views showing the same scene: in which direction did I move from the first view to the second view?\nA. Directly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left" \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B
 ```
 
@@ -216,7 +216,7 @@ The model is loaded once and processes questions sequentially. The questions rem
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 

@@ -30,11 +30,13 @@ def get_pixel_values(image_paths):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Examples for SenseSI single-run MCQ")
+    parser = argparse.ArgumentParser(
+        description="Examples for SenseNova-SI single-run MCQ"
+    )
     parser.add_argument(
         "--model_path",
         type=str,
-        default="sensenova/SenseSI-InternVL3-8B",
+        default="sensenova/SenseNova-SI-1.1-InternVL3-8B",
         help="Model path",
     )
     parser.add_argument(
