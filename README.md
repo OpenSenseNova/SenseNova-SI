@@ -107,7 +107,7 @@ which achieve state-of-the-art performance among open-source models of comparabl
       <td>BAGEL-7B-MoT</td><td>31.4</td><td>31.0</td><td>34.7</td><td>41.3</td><td>37.0</td>
     </tr>
     <tr>
-      <td>SpaceR-7B</td><td>36.29</td><td>27.4</td><td>37.9</td><td>35.8</td><td>34.2</td>
+      <td>SpaceR-7B</td><td>41.5</td><td>27.4</td><td>37.9</td><td>35.8</td><td>34.2</td>
     </tr>
     <tr>
       <td>ViLaSR-7B</td><td>44.6</td><td>30.2</td><td>35.1</td><td>35.7</td><td>38.7</td>
