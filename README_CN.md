@@ -232,8 +232,3 @@ python example.py \
 ### 评测
 
 如需复现上述基准测试结果，请参考 [EASI](https://github.com/EvolvingLMMs-Lab/EASI) 在主流空间智能基准上评估 SenseNova-SI 的表现。
-
-
-## 后续计划
-
-我们将于近期发布配套的技术报告，敬请期待。

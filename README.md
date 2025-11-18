@@ -240,8 +240,3 @@ python example.py \
 ### Evaluation
 
 To reproduce the benchmark results above, please refer to [EASI](https://github.com/EvolvingLMMs-Lab/EASI) to evaluate SenseNova-SI on mainstream spatial intelligence benchmarks.
-
-
-## What's next?
-
-We will release the accompanying technical report shortly. Please stay tuned!
