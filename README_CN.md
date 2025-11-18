@@ -1,6 +1,6 @@
 <div align="center">
 
-# SenseNova-SI: 探索空间智能在多模态基座模型上尺度效应
+# SenseNova-SI: 探索空间智能在多模态基座模型上的尺度效应
 
 </div>
 
