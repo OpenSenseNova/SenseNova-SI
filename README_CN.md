@@ -1,6 +1,6 @@
 <div align="center">
 
-# SenseNova-SI: 探索空间智能在多模态基础模型上尺度效应
+# SenseNova-SI: 探索空间智能在多模态基座模型上尺度效应
 
 </div>
 
@@ -29,7 +29,7 @@
 
 
 ## 概览
-尽管多模态基础模型已取得显著进展，但在空间智能方面仍存在明显不足。
+尽管多模态基座模型已取得显著进展，但在空间智能方面仍存在明显不足。
 本研究基于成熟的多模态基础，包括视觉理解模型（如Qwen3-VL、InternVL3）和统一理解生成模型（如Bagel），从尺度效应（Scaling）的视角构建了**SenseNova-SI系列模型**。
 我们采用系统化方法构建了包含800万样本的SenseNova-SI-8M数据集，通过严格的空间能力分类体系培养高性能、高鲁棒性的空间能力。
 该系列模型在多项空间智能基准测试中取得突破性表现：VSI-Bench 68.7%、MMSI 43.3%、MindCube 85.6%、ViewSpatial 54.6%、SITE 50.1%，同时保持强大的通用多模态理解能力（如MMBench-En 84.9%）。
@@ -232,3 +232,15 @@ python example.py \
 ### 评测
 
 如需复现上述基准测试结果，请参考 [EASI](https://github.com/EvolvingLMMs-Lab/EASI) 在主流空间智能基准上评估 SenseNova-SI 的表现。
+
+
+## 🖊️ 引用
+
+```bib
+@article{sensenova-si,
+  title = {Scaling Spatial Intelligence with Multimodal Foundation Models},
+  author = {Cai, Zhongang and Wang, Ruisi and Gu, Chenyang and Pu, Fanyi and Xu, Junxiang and Wang, Yubo and Yin, Wanqi and Yang, Zhitao and Wei, Chen and Sun, Qingping and Zhou, Tongxi and Li, Jiaqi and Pang, Hui En and Qian, Oscar and Wei, Yukun and Lin, Zhiqian and Shi, Xuanke and Deng, Kewang and Han, Xiaoyang and Chen, Zukai and Fan, Xiangyu and Deng, Hanming and Lu, Lewei and Pan, Liang and Li, Bo and Liu, Ziwei and Wang, Quan and Lin, Dahua and Yang, Lei},
+  journal = {arXiv preprint arXiv:2511.13719},
+  year = {2025}
+}
+```
