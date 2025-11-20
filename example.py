@@ -7,6 +7,13 @@ from transformers import AutoModel, AutoTokenizer
 from utils import load_image, split_model
 
 
+def set_seed(seed=42):
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+
+
 def get_pixel_values(image_paths):
     pixel_values_list = []
     print(f"Load {len(image_paths)} images...")
@@ -30,6 +37,8 @@ def get_pixel_values(image_paths):
 
 
 if __name__ == "__main__":
+    set_seed()
+
     parser = argparse.ArgumentParser(
         description="Examples for SenseNova-SI single-run MCQ"
     )
@@ -65,19 +74,26 @@ if __name__ == "__main__":
     device_map = split_model(model_path)
     model = AutoModel.from_pretrained(
         model_path,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
+        # use_flash_attn=True,
+        attn_implementation="flash_attention_2",
         load_in_8bit=False,
         low_cpu_mem_usage=True,
-        use_flash_attn=True,
         trust_remote_code=True,
         device_map=device_map,
     ).eval()
+
     tokenizer = AutoTokenizer.from_pretrained(
         model_path, trust_remote_code=True, use_fast=False
     )
 
     generation_config = dict(
-        do_sample=False, max_new_tokens=512, top_p=None, num_beams=1
+        do_sample=False,
+        max_new_tokens=8192,
+        top_p=1.0,
+        temperature=0.0,
+        repetition_penalty=1,
+        num_beams=1,
     )
 
     if args.jsonl_path:
