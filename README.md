@@ -170,14 +170,14 @@ python example.py \
 
 ### Examples
 
-#### Test Single-Image MCQ
+#### Example 1
 
-This example is from the `MultiV` subset of [SITE-Bench](https://wenqi-wang20.github.io/SITE-Bench.github.io/):
+This example is from the `Pos-Obj-Obj` subset of [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench):
 
 ```bash
 python example.py \
-  --image_paths examples/Q1_1.png \
-  --question "<image>\nWhich figure is a top-down view of the given shape?\nOptions:\nA: A\nB: B\nC: C\nD: D" \
+  --image_paths examples/Q1_1.png examples/Q1_2.png \
+  --question "<image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise" \
   --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
@@ -185,14 +185,21 @@ python example.py \
 <!-- Example 1 -->
 <details open>
   <summary><strong>Details of Example 1</strong></summary>
-  <p><strong>Q:</strong> Which figure is a top-down view of the given shape?\nOptions:\nA: A\nB: B\nC: C\nD: D</p>
-  <div align="center">
-    <img src="./examples/Q1_1.png" style="width:40%; height:auto;">
-  </div>
+  <p><strong>Q:</strong> <image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q1_1.png" alt="First image" width="100%">
+      </td>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q1_2.png" alt="Second image" width="100%">
+      </td>
+    </tr>
+  </table>
 </details>
 
 
-#### Test Multi-Image MCQ
+#### Example 2
 
 This example is from the `Rotation` subset of [MindCube](https://mind-cube.github.io/):
 
