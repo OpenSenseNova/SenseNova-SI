@@ -190,6 +190,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>正确答案: C</strong></p>
 </details>
 
 #### 示例2
@@ -218,6 +219,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>正确答案: D</strong></p>
 </details>
 
 

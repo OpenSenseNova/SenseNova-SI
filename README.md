@@ -196,6 +196,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>GT: C</strong></p>
 </details>
 
 
@@ -225,6 +226,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>GT: D</strong></p>
 </details>
 
 
