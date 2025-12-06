@@ -1,38 +1,130 @@
-from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
+import argparse
+import json
+import torch
+from transformers import AutoProcessor, AutoModelForConditionalGeneration
 
-model_path = "sensenova/SenseNova-SI-1.1-Qwen3-VL-8B"
+def set_seed(seed=42):
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
 
-model = Qwen3VLForConditionalGeneration.from_pretrained(model_path, dtype="auto", device_map="auto")
-processor = AutoProcessor.from_pretrained("sensenova/SenseNova-SI-1.1-Qwen3-VL-8B")
+def process_query(model, processor, image_paths, question, generation_config):
+    messages = [
+        {
+            "role": "user",
+            "content": []
+        }
+    ]
+    
+    for image_path in image_paths:
+        messages[0]["content"].append({
+            "type": "image",
+            "image": image_path
+        })
+    
+    messages[0]["content"].append({
+        "type": "text",
+        "text": question
+    })
+    
+    inputs = processor.apply_chat_template(
+        messages, tokenize=True, add_generation_prompt=True, return_dict=True, return_tensors="pt"
+    )
+    inputs = inputs.to(model.device)
+    
+    generated_ids = model.generate(**inputs, **generation_config)
+    generated_ids_trimmed = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)]
+    output_text = processor.batch_decode(
+        generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+    )
+    return output_text[0]
 
-messages = [
-    {
-        "role": "user",
-        "content": [
-            {
-                "type": "image",
-                "image": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-SI/refs/heads/main/examples/Q1_1.png",
-            },
-            {
-                "type": "image",
-                "image": "https://raw.githubusercontent.com/OpenSenseNova/SenseNova-SI/refs/heads/main/examples/Q1_2.png",
-            },
-            {
-                "type": "text",
-                "text": "You are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions:\nA: 90 degrees counterclockwise\nB: 90 degrees clockwise\nC: 135 degrees counterclockwise\nD: 135 degrees clockwise",
-            },
-        ],
-    }
-]
+if __name__ == "__main__":
+    set_seed()
 
-inputs = processor.apply_chat_template(
-    messages, tokenize=True, add_generation_prompt=True, return_dict=True, return_tensors="pt"
-)
-inputs = inputs.to(model.device)
+    parser = argparse.ArgumentParser(
+        description="Examples for SenseNova-SI Qwen3-VL"
+    )
+    parser.add_argument(
+        "--model_path",
+        type=str,
+        default="sensenova/SenseNova-SI-1.1-Qwen3-VL-8B",
+        help="Model path",
+    )
+    parser.add_argument(
+        "--image_paths",
+        type=str,
+        nargs="+",
+        default=[],
+        help="Path to image files, can specify multiple",
+    )
+    parser.add_argument(
+        "--question",
+        type=str,
+        default="<image>\nPlease describe the image in detail.",
+        help="Question to ask the model",
+    )
+    parser.add_argument(
+        "--jsonl_path",
+        type=str,
+        default=None,
+        help="Path to jsonl file containing examples",
+    )
+    args = parser.parse_args()
 
-generated_ids = model.generate(**inputs, max_new_tokens=128)
-generated_ids_trimmed = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)]
-output_text = processor.batch_decode(
-    generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-)
-print(output_text)
+    model_path = args.model_path
+
+    model = AutoModelForConditionalGeneration.from_pretrained(
+        model_path, dtype="auto", device_map="auto"
+    )
+    processor = AutoProcessor.from_pretrained(model_path)
+
+    generation_config = dict(
+        max_new_tokens=8192,
+        top_p=1.0,
+        temperature=0.0,
+        repetition_penalty=1,
+        num_beams=1,
+    )
+
+    if args.jsonl_path:
+        with open(args.jsonl_path, "r") as f:
+            for line in f:
+                entry = json.loads(line.strip())
+                image_paths = entry.get("image", [])
+                conversations = entry.get("conversations", [])
+                if conversations:
+                    question = conversations[0].get("value", "")
+                else:
+                    question = ""
+                id_ = entry.get("id", "")
+                gt = entry.get("GT", "")
+
+                if not image_paths or not question:
+                    print(f"Skipping invalid entry id {id_}")
+                    continue
+
+                print(f"Processing question id: {id_}")
+                response = process_query(model, processor, image_paths, question, generation_config)
+                print(f"User: {question}")
+                print(f"Assistant: {response}")
+                print(f"Ground Truth: {gt}")
+                print("-" * 50)
+    else:
+        question = args.question
+        image_paths = args.image_paths
+        
+        # If user didn't provide args, use the default example from the original file?
+        # The user asked to imitate example.py. example.py defaults to empty image_paths.
+        # However, to make it useful out of the box like the original example_qwen.py, 
+        # I could check if image_paths is empty and question is default, then maybe use the online example?
+        # But strictly following example.py means just using the args.
+        # I will stick to the args. If the user runs it without args, it will try to run with empty images and default question.
+        # Note: Qwen3-VL might complain if "image" type is used but no image is provided?
+        # Actually, if image_paths is empty, my process_query loop won't add any image content.
+        # It will just be text. This is fine.
+        
+        response = process_query(model, processor, image_paths, question, generation_config)
+        print(f"User: {question}")
+        print(f"Assistant: {response}")
