@@ -2,7 +2,11 @@ import argparse
 import json
 import torch
 
-from transformers import Qwen3VLForConditionalGeneration, AutoProcessor
+from transformers import (
+    AutoProcessor,
+    Qwen3VLForConditionalGeneration,
+    Qwen2_5_VLForConditionalGeneration,
+)
 
 
 def set_seed(seed=42):
@@ -69,12 +73,20 @@ if __name__ == "__main__":
 
     model_path = args.model_path
 
-    model = Qwen3VLForConditionalGeneration.from_pretrained(
-        model_path,
-        dtype="auto",
-        device_map="auto",
-        trust_remote_code=True,
-    ).eval()
+    if "Qwen3-VL" in model_path:
+        model = Qwen3VLForConditionalGeneration.from_pretrained(
+            model_path,
+            dtype="auto",
+            device_map="auto",
+            trust_remote_code=True,
+        ).eval()
+    elif "Qwen2.5-VL" in model_path:
+        model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+            model_path,
+            dtype="auto",
+            device_map="auto",
+            trust_remote_code=True,
+        ).eval()
 
     processor = AutoProcessor.from_pretrained(
         model_path, trust_remote_code=True, use_fast=False
