@@ -128,7 +128,7 @@ if __name__ == "__main__":
                 print(f"Ground Truth: {gt}")
                 print("-" * 50)
     else:
-        question = args.question
+        question = args.question.replace("<image>", "").strip()
         image_contents = [
             {"type": "image_url", "data": {"url": img_path}}
             for img_path in args.image_paths
