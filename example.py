@@ -4,7 +4,7 @@ import json
 import torch
 from transformers import AutoModel, AutoTokenizer
 
-from utils import load_image, split_model
+from utils import load_image, split_model, get_model_type
 
 
 def set_seed(seed=42):
@@ -70,31 +70,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     model_path = args.model_path
-
-    device_map = split_model(model_path)
-    model = AutoModel.from_pretrained(
-        model_path,
-        dtype=torch.bfloat16,
-        # use_flash_attn=True,
-        attn_implementation="flash_attention_2",
-        load_in_8bit=False,
-        low_cpu_mem_usage=True,
-        trust_remote_code=True,
-        device_map=device_map,
-    ).eval()
-
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_path, trust_remote_code=True, use_fast=False
-    )
-
-    generation_config = dict(
-        do_sample=False,
-        max_new_tokens=8192,
-        top_p=1.0,
-        temperature=0.0,
-        repetition_penalty=1,
-        num_beams=1,
-    )
 
     if args.jsonl_path:
         with open(args.jsonl_path, "r") as f:
