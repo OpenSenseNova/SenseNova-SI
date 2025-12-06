@@ -2,9 +2,7 @@ import argparse
 import json
 
 import torch
-from transformers import AutoModel, AutoTokenizer
-
-from utils import load_image, split_model, get_model_type
+from sensenova_si import get_model
 
 
 def set_seed(seed=42):
@@ -12,28 +10,6 @@ def set_seed(seed=42):
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
-
-
-def get_pixel_values(image_paths):
-    pixel_values_list = []
-    print(f"Load {len(image_paths)} images...")
-    for path in image_paths:
-        print(f"Load image {path}...")
-        try:
-            pixel_values_list.append(
-                load_image(path, max_num=12).to(torch.bfloat16).cuda()
-            )
-        except Exception as e:
-            print(f"Error loading image {path}: {e}")
-            continue
-
-    if len(pixel_values_list) > 1:
-        pixel_values = torch.cat(pixel_values_list, dim=0)
-    elif len(pixel_values_list) == 1:
-        pixel_values = pixel_values_list[0]
-    else:
-        raise ValueError(f"No valid images found in {image_paths}")
-    return pixel_values
 
 
 if __name__ == "__main__":
@@ -67,9 +43,17 @@ if __name__ == "__main__":
         default=None,
         help="Path to jsonl file containing examples",
     )
+    parser.add_argument(
+        "--model_type",
+        type=str,
+        default="auto",
+        choices=["qwen", "internvl", "auto"],
+        help="Model type",
+    )
     args = parser.parse_args()
 
     model_path = args.model_path
+    model = get_model(model_path, model_type=args.model_type)
 
     if args.jsonl_path:
         with open(args.jsonl_path, "r") as f:
@@ -89,22 +73,13 @@ if __name__ == "__main__":
                     continue
 
                 print(f"Processing question id: {id_}")
-                pixel_values = get_pixel_values(image_paths)
-                response = model.chat(
-                    tokenizer, pixel_values, question, generation_config, history=None
-                )
+                response = model.generate(question, images=image_paths)
                 print(f"User: {question}")
                 print(f"Assistant: {response}")
                 print(f"Ground Truth: {gt}")
                 print("-" * 50)
     else:
         question = args.question
-        pixel_values = None
-        if len(args.image_paths) > 0:
-            pixel_values = get_pixel_values(args.image_paths)
-
-        response = model.chat(
-            tokenizer, pixel_values, question, generation_config, history=None
-        )
+        response = model.generate(question, images=args.image_paths)
         print(f"User: {question}")
         print(f"Assistant: {response}")

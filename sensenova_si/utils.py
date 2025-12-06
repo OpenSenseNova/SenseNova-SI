@@ -16,10 +16,15 @@ def to_openai_format(question: str, images: list[str], image_token: str = "<imag
     for i, text in enumerate(text_split):
         text = text.strip()
         if text:
-            content.append({"role": "user", "content": text})
+            content.append({"type": "text", "text": text})
         if i < len(images):
-            content.append({"role": "user", "content": images[i]})
-    return content
+            content.append({"type": "image_url", "image_url": {"url": images[i]}})
+    return [
+        {
+            "role": "user",
+            "content": content
+        }
+    ]
     
     
 

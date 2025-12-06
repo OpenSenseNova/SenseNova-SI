@@ -1,10 +1,10 @@
 from .model import Model
 from .utils import to_openai_format 
-from transformers import AutoModel, AutoProcessor
+from transformers import AutoModelForImageTextToText, AutoProcessor
 
-class Qwen(Model):
+class SenseNovaSIQwenModel(Model):
     def __init__(self, model_path: str):
-        self.model = AutoModel.from_pretrained(model_path)
+        self.model = AutoModelForImageTextToText.from_pretrained(model_path)
         self.processor = AutoProcessor.from_pretrained(model_path)
         self.default_generation_config = {
             "do_sample": False,
