@@ -94,7 +94,6 @@ if __name__ == "__main__":
                 entry = json.loads(line.strip())
                 image_paths = entry.get("image", [])
                 conversations = entry.get("conversations", [])
-                print(conversations)
                 if conversations:
                     question = conversations[0].get("value", "")
                 else:
@@ -102,7 +101,7 @@ if __name__ == "__main__":
                 id_ = entry.get("id", "")
                 gt = entry.get("GT", "")
 
-                question = question.replace("<image>", "")
+                question = question.replace("<image>", "").strip()
                 content_images = [
                     {"type": "image_url", "data": {"url": img_path}}
                     for img_path in image_paths
