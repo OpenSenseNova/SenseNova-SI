@@ -1,5 +1,5 @@
 [project]
-name = "SenseSI"
+name = "SenseNova-SI"
 version = "0.1.0"
 description = "Scaling Spatial Intelligence with Multimodal Foundation Models"
 readme = "README.md"
@@ -13,6 +13,7 @@ dependencies = [
     "einops>=0.8.1",
     "timm>=1.0.22",
     "accelerate>=1.11.0",
+    "ruff==0.14.4",
 ]
 
 [dependency-groups]
