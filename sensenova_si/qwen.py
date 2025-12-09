@@ -12,9 +12,13 @@ class SenseNovaSIQwenModel(Model):
         self,
         model_path: str,
         generation_config: dict[str, Any] | str | os.PathLike | None = None,
+        device_map: str = "auto",
+        dtype: str = "auto",
     ):
         super().__init__(generation_config)
-        self.model = AutoModelForImageTextToText.from_pretrained(model_path)
+        self.model = AutoModelForImageTextToText.from_pretrained(
+            model_path, device_map=device_map, dtype=dtype
+        )
         self.processor = AutoProcessor.from_pretrained(model_path)
 
     def generate(self, question: str, images: list[str] | None = None, **kwargs) -> str:
