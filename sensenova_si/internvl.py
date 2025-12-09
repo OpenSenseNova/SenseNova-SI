@@ -1,12 +1,19 @@
-from .model import Model
-from .utils import split_model, load_image
-from transformers import AutoModel, AutoTokenizer
-import torch
 import os
 from typing import Any
 
+import torch
+from transformers import AutoModel, AutoTokenizer
+
+from .model import Model
+from .utils import load_image, split_model
+
+
 class SenseNovaSIInternVLModel(Model):
-    def __init__(self, model_path: str, generation_config: dict[str, Any] | str | os.PathLike | None = None):
+    def __init__(
+        self,
+        model_path: str,
+        generation_config: dict[str, Any] | str | os.PathLike | None = None,
+    ):
         super().__init__(generation_config)
         self.device_map = split_model(model_path)
         self.model = AutoModel.from_pretrained(
@@ -30,7 +37,7 @@ class SenseNovaSIInternVLModel(Model):
         pixel_values = None
         if images:
             pixel_values = self.get_pixel_values(images)
-        
+
         # print(generation_config)
         response = self.model.chat(
             self.tokenizer, pixel_values, question, generation_config, history=None
@@ -57,6 +64,3 @@ class SenseNovaSIInternVLModel(Model):
         else:
             raise ValueError(f"No valid images found in {image_paths}")
         return pixel_values
-
-
-            

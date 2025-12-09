@@ -1,6 +1,7 @@
 from .internvl import SenseNovaSIInternVLModel
 from .qwen import SenseNovaSIQwenModel
 
+
 def get_default_model_type(model_path):
     if "qwen" in model_path.lower():
         return "qwen"
@@ -8,6 +9,7 @@ def get_default_model_type(model_path):
         return "internvl"
     else:
         raise ValueError(f"Unknown model type for {model_path}")
+
 
 def get_model(model_path, model_type="auto"):
     if model_type == "auto":
@@ -18,6 +20,7 @@ def get_model(model_path, model_type="auto"):
         return SenseNovaSIInternVLModel(model_path)
     else:
         raise ValueError(f"Unknown model type: {model_type}")
+
 
 __all__ = [
     "get_default_model_type",

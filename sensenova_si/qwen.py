@@ -1,20 +1,33 @@
-from .model import Model
-from .utils import to_openai_format 
-from transformers import AutoModelForImageTextToText, AutoProcessor
 import os
 from typing import Any
 
+from transformers import AutoModelForImageTextToText, AutoProcessor
+
+from .model import Model
+from .utils import to_openai_format
+
+
 class SenseNovaSIQwenModel(Model):
-    def __init__(self, model_path: str, generation_config: dict[str, Any] | str | os.PathLike | None = None):
+    def __init__(
+        self,
+        model_path: str,
+        generation_config: dict[str, Any] | str | os.PathLike | None = None,
+    ):
         super().__init__(generation_config)
         self.model = AutoModelForImageTextToText.from_pretrained(model_path)
         self.processor = AutoProcessor.from_pretrained(model_path)
-    
+
     def generate(self, question: str, images: list[str] | None = None, **kwargs) -> str:
         generation_config = self.default_generation_config.copy()
         generation_config.update(kwargs)
         openai_style_input = to_openai_format(question, images)
-        inputs = self.processor.apply_chat_template(openai_style_input, tokenize=True, add_generation_prompt=True, return_tensors="pt", return_dict=True).to(self.model.device)
+        inputs = self.processor.apply_chat_template(
+            openai_style_input,
+            tokenize=True,
+            add_generation_prompt=True,
+            return_tensors="pt",
+            return_dict=True,
+        ).to(self.model.device)
         generated_ids = self.model.generate(**inputs, **generation_config)
         generated_ids_trimmed = [
             out_ids[len(in_ids) :]
@@ -26,4 +39,3 @@ class SenseNovaSIQwenModel(Model):
             clean_up_tokenization_spaces=False,
         )
         return output_text
-
