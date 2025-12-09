@@ -1,18 +1,14 @@
 from .model import Model
 from .utils import to_openai_format 
 from transformers import AutoModelForImageTextToText, AutoProcessor
+import os
+from typing import Any
 
 class SenseNovaSIQwenModel(Model):
-    def __init__(self, model_path: str):
+    def __init__(self, model_path: str, generation_config: dict[str, Any] | str | os.PathLike | None = None):
+        super().__init__(generation_config)
         self.model = AutoModelForImageTextToText.from_pretrained(model_path)
         self.processor = AutoProcessor.from_pretrained(model_path)
-        self.default_generation_config = {
-            "do_sample": False,
-            "max_new_tokens": 8192,
-            "top_p": 1.0,
-            "repetition_penalty": 1,
-            "num_beams": 1,
-        }
     
     def generate(self, question: str, images: list[str] | None = None, **kwargs) -> str:
         generation_config = self.default_generation_config.copy()

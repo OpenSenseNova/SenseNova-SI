@@ -9,7 +9,9 @@ from transformers import AutoConfig
 IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
 
-def to_openai_format(question: str, images: list[str], image_token: str = "<image>"):
+def to_openai_format(question: str, images: list[str] | None = None, image_token: str = "<image>"):
+    if images is None:
+        images = []
     content = []
     text_split = question.split(image_token)
     assert len(text_split) == len(images) + 1, f"Number of images {len(images)} does not match number of text splits {len(text_split)}"

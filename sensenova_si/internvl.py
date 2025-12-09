@@ -2,9 +2,12 @@ from .model import Model
 from .utils import split_model, load_image
 from transformers import AutoModel, AutoTokenizer
 import torch
+import os
+from typing import Any
 
 class SenseNovaSIInternVLModel(Model):
-    def __init__(self, model_path):
+    def __init__(self, model_path: str, generation_config: dict[str, Any] | str | os.PathLike | None = None):
+        super().__init__(generation_config)
         self.device_map = split_model(model_path)
         self.model = AutoModel.from_pretrained(
             model_path,
@@ -21,15 +24,6 @@ class SenseNovaSIInternVLModel(Model):
             model_path, trust_remote_code=True, use_fast=False
         )
 
-        self.default_generation_config = {
-            "do_sample": False,
-            "max_new_tokens": 8192,
-            "top_p": 1.0,
-            "temperature": 0.0,
-            "repetition_penalty": 1,
-            "num_beams": 1,
-        }
-    
     def generate(self, question: str, images: list[str] | None = None, **kwargs) -> str:
         generation_config = self.default_generation_config.copy()
         generation_config.update(kwargs)
