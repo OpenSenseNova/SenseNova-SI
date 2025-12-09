@@ -1,5 +1,5 @@
 [project]
-name = "SenseSI"
+name = "SenseNova-SI"
 version = "0.1.0"
 description = "Scaling Spatial Intelligence with Multimodal Foundation Models"
 readme = "README.md"
@@ -17,6 +17,7 @@ dependencies = [
 
 [dependency-groups]
 flash-attn = ["flash-attn==2.7.4.post1"]
+dev = ["ruff==0.14.4"]
 
 [project.optional-dependencies]
 cu118 = ["torch>=2.4.0", "torchvision"]
