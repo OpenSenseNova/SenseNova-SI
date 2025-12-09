@@ -1813,7 +1813,6 @@ dependencies = [
     { name = "einops" },
     { name = "numpy" },
     { name = "pillow" },
-    { name = "ruff" },
     { name = "setuptools" },
     { name = "timm" },
     { name = "transformers" },
@@ -1849,6 +1848,9 @@ cu129 = [
 ]
 
 [package.dev-dependencies]
+dev = [
+    { name = "ruff" },
+]
 flash-attn = [
     { name = "flash-attn" },
 ]
@@ -1859,7 +1861,6 @@ requires-dist = [
     { name = "einops", specifier = ">=0.8.1" },
     { name = "numpy" },
     { name = "pillow" },
-    { name = "ruff", specifier = "==0.14.4" },
     { name = "setuptools" },
     { name = "timm", specifier = ">=1.0.22" },
     { name = "torch", marker = "extra == 'cu118'", specifier = ">=2.4.0", index = "https://download.pytorch.org/whl/cu118", conflict = { package = "sensenova-si", extra = "cu118" } },
@@ -1879,6 +1880,7 @@ requires-dist = [
 provides-extras = ["cu118", "cu121", "cu124", "cu126", "cu128", "cu129"]
 
 [package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = "==0.14.4" }]
 flash-attn = [{ name = "flash-attn", specifier = "==2.7.4.post1" }]
 
 [[package]]
