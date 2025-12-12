@@ -10,11 +10,14 @@
 English | [简体中文](README_CN.md) 
 
 <p align="center">
+    <a href="https://arxiv.org/abs/2511.13719" target="_blank">
+        <img alt="arXiv" src="https://img.shields.io/badge/arXiv-SenseNova_SI-red?logo=arxiv" height="20" />
+    </a>
     <a href="https://huggingface.co/collections/sensenova/sensenova-si" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI-Models-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
-    <a href="https://arxiv.org/abs/2511.13719" target="_blank">
-        <img alt="arXiv" src="https://img.shields.io/badge/arXiv-SenseNova_SI-red?logo=arxiv" height="20" />
+    <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
+        <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
     </a>
     <a href="https://huggingface.co/spaces/lmms-lab-si/EASI-Leaderboard" target="_blank">
         <img alt="Leaderboard" src="https://img.shields.io/badge/%F0%9F%A4%97%20_EASI-Leaderboard-ffc107?color=ffc107&logoColor=white" height="20" />
@@ -45,7 +48,7 @@ All newly trained multimodal foundation models are publicly released to facilita
 Currently, we build SenseNova-SI upon popular open-source foundation models to maximize compatibility with existing research pipelines.
 In this release, we present 
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B) and 
-[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B), 
+[**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B), 
 which achieve state-of-the-art performance among open-source models of comparable size across five recent spatial intelligence benchmarks: 
 **VSI**, **MMSI**, **MindCube**, **ViewSpatial** and **SITE**.
 
@@ -165,7 +168,7 @@ A simple image-free test to verify environment setup and download the model.
 ```bash
 python example.py \
   --question "Hello" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B
 ```
 
 ### Examples
@@ -178,7 +181,7 @@ This example is from the `Pos-Obj-Obj` subset of [MMSI-Bench](https://github.com
 python example.py \
   --image_paths examples/Q1_1.png examples/Q1_2.png \
   --question "<image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 
@@ -208,7 +211,7 @@ This example is from the `Rotation` subset of [MindCube](https://mind-cube.githu
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "<image><image>\nBased on these two views showing the same scene: in which direction did I move from the first view to the second view?\nA. Directly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B
 ```
 
@@ -242,7 +245,7 @@ The model is loaded once and processes questions sequentially. The questions rem
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
 # --model_path OpenGVLab/InternVL3-8B 
 ```
 
