@@ -157,7 +157,6 @@ We recommend using [uv](https://docs.astral.sh/uv/) to manage the environment.
 git clone git@github.com:OpenSenseNova/SenseNova-SI.git
 cd SenseNova-SI/
 uv sync --extra cu124 # or one of [cu118|cu121|cu124|cu126|cu128|cu129], depending on your CUDA version
-uv sync
 source .venv/bin/activate
 ```
 
