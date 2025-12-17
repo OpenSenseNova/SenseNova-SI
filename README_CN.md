@@ -41,6 +41,9 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 发布信息
+
+### 模型
+
 目前，我们基于流行的开源基础模型构建 SenseNova-SI，以最大化与现有研究流程的兼容性。
 在本次发布中，我们推出
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
@@ -137,6 +140,54 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
     <tr style="color:#6b7280;">
       <td>GPT-5-2025-08-07</td><td>55.0</td><td>41.8</td><td>56.3</td><td>45.5</td><td>61.8</td><td>68.0</td><td>60.3</td><td>81.6</td>
+    </tr>
+  </tbody>
+</table>
+
+### 数据集
+
+为推进空间智能领域的研究，我们先发布一个高效的子集 [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K)。
+由于 SenseNova-SI 专为研究扩展规律而设计，我们观察到这个子集已经取得了显著的性能提升。
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>SI Dataset</th>
+      <th>VSI</th>
+      <th>MMSI</th>
+      <th>MindCube-Tiny</th>
+      <th>ViewSpatial</th>
+      <th>SITE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>-</td><td>42.1</td><td>28.0</td><td>41.5</td><td>38.6</td><td>41.1</td>
+    </tr>
+    <tr>
+      <td>VST-7B-SFT</td><td>VST-P-4.1M</td><td>60.6</td><td>32.0</td><td>39.7</td><td>50.5</td><td>39.6</td>
+    </tr>
+    <tr>
+      <td>Cambrian-S-7B</td><td>VSI-590K</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td>
+    </tr>
+    <tr>
+      <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
+      <td><strong>SenseNova-SI-800K</strong></td>
+      <td><strong>60.9</strong></td>
+      <td><strong>36.4</strong></td>
+      <td><strong>56.9</strong></td>
+      <td><strong>52.5</strong></td>
+      <td><strong>47.7</strong></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B/">SenseNova-SI-1.1-InternVL3-8B</a></strong></td>
+      <td><strong>SenseNova-SI-8M</strong></td>
+      <td><strong>68.7</strong></td>
+      <td><strong>43.3</strong></td>
+      <td><strong>85.6</strong></td>
+      <td><strong>54.6</strong></td>
+      <td><strong>47.7</strong></td>
     </tr>
   </tbody>
 </table>

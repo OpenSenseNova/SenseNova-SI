@@ -44,6 +44,9 @@ All newly trained multimodal foundation models are publicly released to facilita
 *In the future, SenseNova-SI will be integrated with larger-scale in-house models.*
 
 ## Release Information
+
+### Models
+
 Currently, we build SenseNova-SI upon popular open-source foundation models to maximize compatibility with existing research pipelines.
 In this release, we present 
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
@@ -51,9 +54,10 @@ In this release, we present
 [**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), and
-[**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)
+[**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B),
 of which **SenseNova-SI-1.2-InternVL3-8B** achieve state-of-the-art performance among open-source models of comparable size across eight recent spatial intelligence benchmarks: 
 **VSI**, **MMSI**, **MindCube**, **ViewSpatial**, **SITE**, **BLINK**, **3DSRBench**, **EmbSpatial-Bench**.
+
 
 <table>
   <thead>
@@ -144,6 +148,54 @@ of which **SenseNova-SI-1.2-InternVL3-8B** achieve state-of-the-art performance 
   </tbody>
 </table>
 
+
+### Datasets
+
+To further facilitate the research in spatial intelligence, we have released a highly effective subset, [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K).
+Since SenseNova-SI is designed to study scaling laws, we observe that this initial release captures a substantial portion of the gains.
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>SI Dataset</th>
+      <th>VSI</th>
+      <th>MMSI</th>
+      <th>MindCube-Tiny</th>
+      <th>ViewSpatial</th>
+      <th>SITE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>-</td><td>42.1</td><td>28.0</td><td>41.5</td><td>38.6</td><td>41.1</td>
+    </tr>
+    <tr>
+      <td>VST-7B-SFT</td><td>VST-P-4.1M</td><td>60.6</td><td>32.0</td><td>39.7</td><td>50.5</td><td>39.6</td>
+    </tr>
+    <tr>
+      <td>Cambrian-S-7B</td><td>VSI-590K</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td>
+    </tr>
+    <tr>
+      <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
+      <td><strong>SenseNova-SI-800K</strong></td>
+      <td><strong>60.9</strong></td>
+      <td><strong>36.4</strong></td>
+      <td><strong>56.9</strong></td>
+      <td><strong>52.5</strong></td>
+      <td><strong>47.7</strong></td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B/">SenseNova-SI-1.1-InternVL3-8B</a></strong></td>
+      <td><strong>SenseNova-SI-8M</strong></td>
+      <td><strong>68.7</strong></td>
+      <td><strong>43.3</strong></td>
+      <td><strong>85.6</strong></td>
+      <td><strong>54.6</strong></td>
+      <td><strong>47.7</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 ## 🛠️ QuickStart
 
