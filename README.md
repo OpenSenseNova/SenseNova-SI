@@ -177,7 +177,7 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
       <td>Cambrian-S-7B</td><td>VSI-590K</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td>
     </tr>
     <tr>
-      <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
+      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K/">*SenseNova-SI-1.1-InternVL3-8B_800K</a></strong></td>
       <td><strong><a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K">SenseNova-SI-800K</a></strong></td>
       <td><strong>60.9</strong></td>
       <td><strong>36.4</strong></td>
@@ -196,6 +196,31 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
     </tr>
   </tbody>
 </table>
+
+Note that *SenseNova-SI-1.1-InternVL3-8B (800K) is trained on the SenseNova-SI-800K subset to provide a reference for researchers working with the 800K-scale dataset. It is released exclusively for scaling-law analysis and research validation, and is not intended to serve as a primary recommended model of the SenseNova-SI series.
+
+#### Data Format
+
+Our data is stored in the **SenseNova-SI-800K.jsonl** file using the JSONL (JSON Lines) format, where each line represents an independent data entry. Each entry is a dictionary organized in the following format， containing three main fields: **`id`**, **`conversations`**, and **`image`**. 
+
+The `id` serves as a unique identifier for each data sample.
+
+The `image` field is a list of strings specifying image paths, all given as paths relative to the root data directory. 
+
+The `conversations` field is a list of dialogue turns, where each turn is a dictionary with two key-value pairs: `from`, indicating the speaker identity (e.g., human or gpt), and `value`, indicating the textual content. Within `value`, the `<image>` placeholder marks where images are inserted, and the number of `<image>` placeholders match the number of images listed in the `image` field.
+```json
+{
+  "id": 0,
+  "conversations": [
+    {"from": "human", "value": "<image>\nuser input <image>\nuser input"},
+    {"from": "gpt", "value": "assistant output"},
+    {"from": "human", "value": "<image>\nuser input"},
+    {"from": "gpt", "value": "assistant output"}
+  ],
+  "image": ["path/to/image1.jpg", "path/to/image2.jpg", "path/to/image3.jpg"],
+}
+```
+
 
 ## 🛠️ QuickStart
 
@@ -226,7 +251,7 @@ python example.py \
 
 #### Example 1
 
-This example is from [SITE-Bench](https://github.com/InternRobotics/MMSI-Bench):
+This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
 
 ```bash
@@ -247,9 +272,6 @@ python example.py \
     <tr>
       <td align="center" width="50%" style="padding:4px;">
         <img src="./examples/Q1_1.png" alt="First image" width="100%">
-      </td>
-      <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q1_2.png" alt="Second image" width="100%">
       </td>
     </tr>
   </table>
