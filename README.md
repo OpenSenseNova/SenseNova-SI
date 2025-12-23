@@ -178,7 +178,7 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
     </tr>
     <tr>
       <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
-      <td><strong>SenseNova-SI-800K</strong></td>
+      <td><strong><a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K">SenseNova-SI-800K</a></strong></td>
       <td><strong>60.9</strong></td>
       <td><strong>36.4</strong></td>
       <td><strong>56.9</strong></td>
@@ -226,20 +226,23 @@ python example.py \
 
 #### Example 1
 
-This example is from the `Pos-Obj-Obj` subset of [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench):
+This example is from [SITE-Bench](https://github.com/InternRobotics/MMSI-Bench):
+
 
 ```bash
 python example.py \
-  --image_paths examples/Q1_1.png examples/Q1_2.png \
-  --question "<image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise" \
-  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
+  --image_paths examples/Q1_1.png \
+  --question "<image>\nConsider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
+
+
 
 <!-- Example 1 -->
 <details open>
   <summary><strong>Details of Example 1</strong></summary>
-  <p><strong>Q:</strong> <image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise</p>
+  <p><strong>Q:</strong>Which point is closer to the camera?\nA. A is closer\nB. B is closer</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -250,18 +253,19 @@ python example.py \
       </td>
     </tr>
   </table>
-  <p><strong>GT: C</strong></p>
+  <p><strong>GT: A</strong></p>
 </details>
 
 
 #### Example 2
 
-This example is from the `Rotation` subset of [MindCube](https://mind-cube.github.io/):
+This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench):
+
 
 ```bash
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
-  --question "<image><image>\nBased on these two views showing the same scene: in which direction did I move from the first view to the second view?\nA. Directly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left" \
+  --question "<image><image>\nIf the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
   --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -269,7 +273,7 @@ python example.py \
 <!-- Example 2 -->
 <details open>
   <summary><strong>Details of Example 2</strong></summary>
-  <p><strong>Q:</strong> Based on these two views showing the same scene: in which direction did I move from the first view to the second view?\nDirectly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left</p>
+  <p><strong>Q:</strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -280,7 +284,7 @@ python example.py \
       </td>
     </tr>
   </table>
-  <p><strong>GT: D</strong></p>
+  <p><strong>GT: C</strong></p>
 </details>
 
 

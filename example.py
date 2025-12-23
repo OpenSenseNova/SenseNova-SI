@@ -22,7 +22,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default="sensenova/SenseNova-SI-1.1-InternVL3-8B",
+        default="sensenova/SenseNova-SI-1.2-InternVL3-8B",
         help="Model path",
     )
     parser.add_argument(
@@ -54,6 +54,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     model_path = args.model_path
+    print(f"Model path: {model_path}")
     model = get_model(model_path, model_type=args.model_type)
 
     if args.jsonl_path:

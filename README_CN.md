@@ -173,7 +173,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
     <tr>
       <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
-      <td><strong>SenseNova-SI-800K</strong></td>
+      <td><strong><a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K">SenseNova-SI-800K</a></strong></td>
       <td><strong>60.9</strong></td>
       <td><strong>36.4</strong></td>
       <td><strong>56.9</strong></td>
