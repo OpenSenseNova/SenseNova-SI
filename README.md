@@ -177,7 +177,7 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
       <td>Cambrian-S-7B</td><td>VSI-590K</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td>
     </tr>
     <tr>
-      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K/">*SenseNova-SI-1.1-InternVL3-8B_800K</a></strong></td>
+      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K/">*SenseNova-SI-1.1-InternVL3-8B-800K</a></strong></td>
       <td><strong><a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K">SenseNova-SI-800K</a></strong></td>
       <td><strong>60.9</strong></td>
       <td><strong>36.4</strong></td>
@@ -330,6 +330,7 @@ python example.py \
 
 To reproduce the benchmark results above, please refer to [EASI](https://github.com/EvolvingLMMs-Lab/EASI) to evaluate SenseNova-SI on mainstream spatial intelligence benchmarks.
 
+EASI supports over 20 spatial intelligence models and more than 10 spatial benchmarks, offering Docker for one-click spatial intelligence evaluation.
 
 ## 🖊️ Citation
 
