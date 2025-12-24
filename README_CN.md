@@ -33,7 +33,7 @@
 
 ## 概览
 尽管多模态基础模型已取得显著进展，但在空间智能方面仍存在明显不足。
-本研究基于成熟的多模态基础，包括视觉理解模型（如Qwen3-VL、InternVL3）和统一理解生成模型（如Bagel），从尺度效应（Scaling）的视角构建了**SenseNova-SI系列模型**。
+本研究基于成熟的多模态基础，包括视觉理解模型（如Qwen3-VL、InternVL3）和统一理解生成模型（如Bagel），从尺度效应（Scaling）的视角构建了[**SenseNova-SI系列模型**](https://huggingface.co/collections/sensenova/sensenova-si)。
 我们采用系统化方法构建了包含800万样本的SenseNova-SI-8M数据集，通过严格的空间能力分类体系培养高性能、高鲁棒性的空间能力。
 该系列模型在多项空间智能基准测试中取得突破性表现，同时保持强大的通用多模态理解能力。
 本研究进一步分析了数据规模的影响，揭示了多样化数据训练带来的涌现泛化能力，探讨了过拟合与语言捷径的风险，提出了空间思维链推理的初步研究，并验证了下游应用潜力。
@@ -172,7 +172,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>Cambrian-S-7B</td><td>VSI-590K</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td>
     </tr>
     <tr>
-      <td><strong>*SenseNova-SI-1.1-InternVL3-8B (800K)</strong></td>
+      <td><strong><a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K/">*SenseNova-SI-1.1-InternVL3-8B-800K</a></strong></td>
       <td><strong><a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K">SenseNova-SI-800K</a></strong></td>
       <td><strong>60.9</strong></td>
       <td><strong>36.4</strong></td>
@@ -191,6 +191,31 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
   </tbody>
 </table>
+
+请注意，*SenseNova-SI-1.1-InternVL3-8B-800K 是基于 SenseNova-SI-800K 子集训练的，旨在为研究人员提供 800K 规模数据集的参考。该模型仅用于规模定律分析和研究验证，不作为 SenseNova-SI 系列的主要推荐模型。
+
+#### 数据格式
+
+我们的数据存储在 **SenseNova-SI-800K.jsonl** 文件中，采用 JSONL（JSON Lines）格式，其中每一行表示一个独立的数据条目。每个条目是一个包含以下三个主要字段的字典：**`id`**, **`conversations`**, and **`image`**. 
+
+- `id`: 每条数据的唯一标识符。
+- `image`: 一个字符串列表，指定图像路径，路径相对于数据根目录。
+- `conversations`: 一个对话轮次列表，每轮对话是一个包含两个键值对的字典：
+  - `from`: 表示说话者身份（例如 human 或 gpt）。
+  - `value`: i表示文本内容。在`value`中，`<image>`占位符表示插入图像的位置，且`<image>`的数量与 image 字段中列出的图像数量相匹配。
+
+```json
+{
+  "id": 0,
+  "conversations": [
+    {"from": "human", "value": "<image>\nuser input <image>\nuser input"},
+    {"from": "gpt", "value": "assistant output"},
+    {"from": "human", "value": "<image>\nuser input"},
+    {"from": "gpt", "value": "assistant output"}
+  ],
+  "image": ["path/to/image1.jpg", "path/to/image2.jpg", "path/to/image3.jpg"],
+}
+```
 
 
 ## 🛠️ 快速上手
@@ -248,23 +273,50 @@ python example.py \
   </table>
   <p><strong>正确答案: C</strong></p>
 </details>
+[SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
+
+
+```bash
+python example.py \
+  --image_paths examples/Q1_1.png \
+  --question "<image>\nConsider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B
+# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+```
+
+
+
+<!-- Example 1 -->
+<details open>
+  <summary><strong>示例1详情</strong></summary>
+  <p><strong>Q:</strong>Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q1_1.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案: A</strong></p>
+</details>
 
 #### 示例2
 
-该例题源自[MindCube](https://mind-cube.github.io/)的`Rotation`子集:
+该例题源自[MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench):
+
 
 ```bash
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
-  --question "<image><image>\nBased on these two views showing the same scene: in which direction did I move from the first view to the second view?\nA. Directly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
+  --question "<image><image>\nIf the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
+  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
 <!-- Example 2 -->
 <details open>
   <summary><strong>示例2详情</strong></summary>
-  <p><strong>Q:</strong> Based on these two views showing the same scene: in which direction did I move from the first view to the second view?\nDirectly left B. Directly right C. Diagonally forward and right D. Diagonally forward and left</p>
+  <p><strong>Q:</strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -275,7 +327,7 @@ python example.py \
       </td>
     </tr>
   </table>
-  <p><strong>正确答案: D</strong></p>
+  <p><strong>正确答案: C</strong></p>
 </details>
 
 

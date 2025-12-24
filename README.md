@@ -33,7 +33,7 @@ English | [简体中文](README_CN.md)
 
 ## Overview
 Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence.
-In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the **SenseNova-SI family**,
+In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the [**SenseNova-SI family**](https://huggingface.co/collections/sensenova/sensenova-si),
 built upon established multimodal foundations including visual understanding models (i.e., Qwen3-VL and InternVL3) and unified understanding and generation models (i.e., Bagel).
 We take a principled approach to constructing high-performing and robust spatial intelligence by systematically curating SenseNova-SI-8M:
 eight million diverse data samples under a rigorous taxonomy of spatial capabilities.
@@ -197,17 +197,16 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
   </tbody>
 </table>
 
-Note that *SenseNova-SI-1.1-InternVL3-8B (800K) is trained on the SenseNova-SI-800K subset to provide a reference for researchers working with the 800K-scale dataset. It is released exclusively for scaling-law analysis and research validation, and is not intended to serve as a primary recommended model of the SenseNova-SI series.
+Note that *SenseNova-SI-1.1-InternVL3-8B-800K is trained on the SenseNova-SI-800K subset to provide a reference for researchers working with the 800K-scale dataset. It is released exclusively for scaling-law analysis and research validation, and is not intended to serve as a primary recommended model of the SenseNova-SI series.
 
 #### Data Format
 
 Our data is stored in the **SenseNova-SI-800K.jsonl** file using the JSONL (JSON Lines) format, where each line represents an independent data entry. Each entry is a dictionary organized in the following format， containing three main fields: **`id`**, **`conversations`**, and **`image`**. 
 
-The `id` serves as a unique identifier for each data sample.
+- The `id` serves as a unique identifier for each data sample.
+- The `image` field is a list of strings specifying image paths, all given as paths relative to the root data directory.
+- The `conversations` field is a list of dialogue turns, where each turn is a dictionary with two key-value pairs: `from`, indicating the speaker identity (e.g., human or gpt), and `value`, indicating the textual content. Within `value`, the `<image>` placeholder marks where images are inserted, and the number of `<image>` placeholders match the number of images listed in the `image` field.
 
-The `image` field is a list of strings specifying image paths, all given as paths relative to the root data directory. 
-
-The `conversations` field is a list of dialogue turns, where each turn is a dictionary with two key-value pairs: `from`, indicating the speaker identity (e.g., human or gpt), and `value`, indicating the textual content. Within `value`, the `<image>` placeholder marks where images are inserted, and the number of `<image>` placeholders match the number of images listed in the `image` field.
 ```json
 {
   "id": 0,
@@ -267,7 +266,7 @@ python example.py \
 <!-- Example 1 -->
 <details open>
   <summary><strong>Details of Example 1</strong></summary>
-  <p><strong>Q:</strong>Which point is closer to the camera?\nA. A is closer\nB. B is closer</p>
+  <p><strong>Q:</strong>Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
