@@ -192,7 +192,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   </tbody>
 </table>
 
-请注意，*SenseNova-SI-1.1-InternVL3-8B-800K 是基于 SenseNova-SI-800K 子集训练的，旨在为研究人员提供 800K 规模数据集的参考。该模型仅用于规模定律分析和研究验证，不作为 SenseNova-SI 系列的主要推荐模型。
+请注意，*SenseNova-SI-1.1-InternVL3-8B-800K 是基于 SenseNova-SI-800K 子集训练的，旨在为研究人员提供 800K 规模训练数据的性能参考。该模型仅用于规模定律分析和研究验证，不作为 SenseNova-SI 系列的主要推荐模型。
 
 #### 数据格式
 
@@ -247,34 +247,7 @@ python example.py \
 
 #### 示例1
 
-该例题源自[MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench)的`Pos-Obj-Obj`子集:
-
-```bash
-python example.py \
-  --image_paths examples/Q1_1.png examples/Q1_2.png \
-  --question "<image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B 
-# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
-```
-
-<!-- Example 1 -->
-<details open>
-  <summary><strong>示例1详情</strong></summary>
-  <p><strong>Q:</strong> <image><image>\nYou are standing in front of the dice pattern and observing it. Where is the desk lamp approximately located relative to you?\nOptions: A: 90 degrees counterclockwise, B: 90 degrees clockwise, C: 135 degrees counterclockwise, D: 135 degrees clockwise</p>
-  <table>
-    <tr>
-      <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q1_1.png" alt="First image" width="100%">
-      </td>
-      <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q1_2.png" alt="Second image" width="100%">
-      </td>
-    </tr>
-  </table>
-  <p><strong>正确答案: C</strong></p>
-</details>
-[SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
-
+该例题源自[SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
 ```bash
 python example.py \
