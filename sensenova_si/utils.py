@@ -25,7 +25,7 @@ def to_openai_format(
         if text:
             content.append({"type": "text", "text": text})
         if i < len(images):
-            content.append({"type": "image_url", "image_url": {"url": images[i]}})
+            content.append({"type": "image", "image": images[i]})
     return [{"role": "user", "content": content}]
 
 
