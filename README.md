@@ -55,7 +55,7 @@ In this release, we present
 [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), and
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B),
-of which **SenseNova-SI-1.2-InternVL3-8B** achieve state-of-the-art performance among open-source models of comparable size across eight recent spatial intelligence benchmarks: 
+of which **SenseNova-SI-1.2-InternVL3-8B** achieves state-of-the-art performance among open-source models of comparable size across eight recent spatial intelligence benchmarks:
 **VSI**, **MMSI**, **MindCube**, **ViewSpatial**, **SITE**, **BLINK**, **3DSRBench**, **EmbSpatial-Bench**.
 
 
@@ -201,7 +201,7 @@ Note that *SenseNova-SI-1.1-InternVL3-8B-800K is trained on the SenseNova-SI-800
 
 #### Data Format
 
-Our data is stored in the **SenseNova-SI-800K.jsonl** file using the JSONL (JSON Lines) format, where each line represents an independent data entry. Each entry is a dictionary organized in the following format， containing three main fields: **`id`**, **`conversations`**, and **`image`**. 
+Our data is stored in the **SenseNova-SI-800K.jsonl** file using the JSONL (JSON Lines) format, where each line represents an independent data entry. Each entry is a dictionary organized in the following format,containing three main fields: **`id`**, **`conversations`**, and **`image`**.
 
 - The `id` serves as a unique identifier for each data sample.
 - The `image` field is a list of strings specifying image paths, all given as paths relative to the root data directory.
