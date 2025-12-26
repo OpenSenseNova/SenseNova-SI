@@ -100,7 +100,7 @@ class SenseNovaSIBagelModel(Model):
 
         cache_path = snapshot_download(repo_id=model_path)
         self.model_path = cache_path
-        self.checkpoint_path = os.path.join(self.model_path, "ema.safetensors")
+        self.checkpoint_path = os.path.join(self.model_path, "model.safetensors")
 
         # Bagel mode
         env_mode = os.getenv("BAGEL_MODE")
