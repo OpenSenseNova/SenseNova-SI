@@ -43,6 +43,98 @@ analyze the risk of overfitting and language shortcuts, present a preliminary st
 All newly trained multimodal foundation models are publicly released to facilitate further research in this direction.
 *In the future, SenseNova-SI will be integrated with larger-scale in-house models.*
 
+## News
+- [2025-12-06] As a first step, we have released a highly effective data subset, [**SenseNova-SI-800K**](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K), as well as [**SenseNova-SI-1.1-InternVL3-8B-800K**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K), a model trained exclusively on the **SenseNova-SI-800K** subset.
+- [2025-12-06] We present models starting from more base models, namely[**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B), [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B), and [**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B). **SenseNova-SI-1.2-InternVL3-8B** achieve SOTA across eight recent spatial intelligence benchmarks.
+- [2025-11-15] We have released [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B) and 
+[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B), 
+which achieve state-of-the-art(SOTA) performance among open-source models of comparable size across five recent spatial intelligence benchmarks: 
+**VSI**, **MMSI**, **MindCube**, **ViewSpatial** and **SITE**.
+## Models Zoo
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Base Architecture</th>
+      <th>SI Dataset Scale</th>
+      <th>Other Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B/">
+          SenseNova-SI-1.2-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>10M</td>
+      <td>Best Model</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B/">
+          SenseNova-SI-1.1-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B/">
+          SenseNova-SI-1.1-InternVL3-2B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B/">
+          SenseNova-SI-1.1-Qwen3-VL-8B
+        </a>
+      </td>
+      <td>Qwen3-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B">
+          SenseNova-SI-1.1-Qwen2.5-VL-7B
+        </a>
+      </td>
+      <td>Qwen2.5-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B/">
+          SenseNova-SI-1.1-Qwen2.5-VL-3B
+        </a>
+      </td>
+      <td>Qwen2.5-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-BAGEL-7B-MoT">
+          SenseNova-SI-1.1-BAGEL-7B-MoT
+        </a>
+      </td>
+      <td>BAGEL</td>
+      <td>8M</td>
+      <td>unified understanding and generation model</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Release Information
 
 ### Models
