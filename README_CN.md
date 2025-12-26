@@ -40,6 +40,97 @@
 SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间智能基础模型均将陆续开源，以推动空间智能领域的研究发展。
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
+## 新闻
+- [2025-12-06] 为推进空间智能领域的研究，我们先发布一个高效的数据子集, [**SenseNova-SI-800K**](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K), 以及发布模型 [**SenseNova-SI-1.1-InternVL3-8B-800K**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K)。该模型仅使用 SenseNova-SI-800K 子集进行训练，为使用 800K 规模数据进行实验的研究者提供参考。
+- [2025-12-06] 在本次发布中，我们推出[**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B), [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B), 与[**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B). **SenseNova-SI-1.2-InternVL3-8B** 在八个近期发布的空间智能基准测试（VSI、MMSI、MindCube、ViewSpatial、SITE、BLINK、3DSRBench、EmbSpatial-Bench）上， 在同等模型规模下均取得了开源模型的最新最优性能。
+- [2025-11-15] 我们发布了 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)与[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B)， 在五个近期发布的空间智能基准测试（VSI、MMSI、MindCube、ViewSpatial、SITE）上， 在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art）。
+
+## 模型库
+
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>基础架构</th>
+      <th>数据集规模</th>
+      <th>其他说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B/">
+          SenseNova-SI-1.2-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>10M</td>
+      <td>最优模型</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B/">
+          SenseNova-SI-1.1-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B/">
+          SenseNova-SI-1.1-InternVL3-2B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B/">
+          SenseNova-SI-1.1-Qwen3-VL-8B
+        </a>
+      </td>
+      <td>Qwen3-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B">
+          SenseNova-SI-1.1-Qwen2.5-VL-7B
+        </a>
+      </td>
+      <td>Qwen2.5-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B/">
+          SenseNova-SI-1.1-Qwen2.5-VL-3B
+        </a>
+      </td>
+      <td>Qwen2.5-VL</td>
+      <td>8M</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.1-BAGEL-7B-MoT">
+          SenseNova-SI-1.1-BAGEL-7B-MoT
+        </a>
+      </td>
+      <td>BAGEL</td>
+      <td>8M</td>
+      <td>统一的理解与生成模型</td>
+    </tr>
+  </tbody>
+</table>
+
 ## 发布信息
 
 ### 模型
