@@ -161,6 +161,19 @@ python example.py \
   --question "Hello" \
   --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
 ```
+#### 切换已支持的模型
+
+我们已**完整支持多种模型架构**。如需使用不同模型，仅需修改 `--model_path` 参数，其余代码无需任何改动。
+
+使用 **BAGEL-MoT** 模型：
+```bash
+--model_path sensenova/SenseNova-SI-1.1-BAGEL-7B-MoT
+```
+
+使用 **Qwen3-VL** 模型：
+```bash
+--model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+```
 
 ### 示例
 
