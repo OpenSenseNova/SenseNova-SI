@@ -167,6 +167,20 @@ python example.py \
   --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
 ```
 
+#### Switching Between Supported Models
+
+We fully support multiple model architectures.
+To use a different model, simply change the value of the --model_path argument, no other code changes are required.
+
+To use BAGEL-MoT:
+```bash
+--model_path sensenova/SenseNova-SI-1.1-BAGEL-7B-MoT
+```
+
+To use Qwen3-VL:
+```bash
+--model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+```
 ### Examples
 
 #### Example 1
