@@ -41,6 +41,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
+- [2026-01-09] 我们发布了 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B)，提升了开放式空间简答题能力。
 - [2025-12-06] 为推进空间智能领域的研究，我们先发布一个高效的数据子集, [**SenseNova-SI-800K**](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K), 以及发布模型 [**SenseNova-SI-1.1-InternVL3-8B-800K**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K)。该模型仅使用 SenseNova-SI-800K 子集进行训练，为使用 800K 规模数据进行实验的研究者提供参考。
 - [2025-12-06] 在本次发布中，我们推出[**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B), [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B), 与[**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B). **SenseNova-SI-1.2-InternVL3-8B** 在八个近期发布的空间智能基准测试（VSI、MMSI、MindCube、ViewSpatial、SITE、BLINK、3DSRBench、EmbSpatial-Bench）上， 在同等模型规模下均取得了开源模型的最新最优性能。
 - [2025-11-15] 我们发布了 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)与[**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B)， 在五个近期发布的空间智能基准测试（VSI、MMSI、MindCube、ViewSpatial、SITE）上， 在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art）。
@@ -60,13 +61,23 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   <tbody>
     <tr>
       <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B/">
+          SenseNova-SI-1.3-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>14M</td>
+      <td>最优模型</td>
+    </tr>
+    <tr>
+      <td>
         <a href="https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B/">
           SenseNova-SI-1.2-InternVL3-8B
         </a>
       </td>
       <td>InternVL3</td>
       <td>10M</td>
-      <td>最优模型</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>
@@ -137,13 +148,14 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 
 目前，我们基于流行的开源基础模型构建 SenseNova-SI，以最大化与现有研究流程的兼容性。
 在本次发布中，我们推出
+[**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B),
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
 [**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B),
 [**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), 与
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)。
-其中**SenseNova-SI-1.2-InternVL3-8B**在八个近期发布的空间智能基准测试（**VSI**、**MMSI**、**MindCube**、**ViewSpatial**、**SITE**、**BLINK**、**3DSRBench**、**EmbSpatial-Bench**）上，
+其中**SenseNova-SI-1.3-InternVL3-8B**在八个近期发布的空间智能基准测试（**VSI**、**MMSI**、**MindCube**、**ViewSpatial**、**SITE**、**BLINK**、**3DSRBench**、**EmbSpatial-Bench**）上，
 在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art）。
 
 <table>
@@ -210,15 +222,15 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>Cambrian-S-7B</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td><td>37.9</td><td>54.8</td><td>72.8</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-1.2-InternVL3-8B</strong></td>
-      <td><strong>69.6</strong></td>
-      <td><strong>42.6</strong></td>
-      <td><strong>89.0</strong></td>
-      <td><strong>58.8</strong></td>
-      <td><strong>49.0</strong></td>
-      <td><strong>69.4</strong></td>
-      <td><strong>60.1</strong></td>
-      <td><strong>77.7</strong></td>
+      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td>
+      <td><strong>68.6</strong></td>
+      <td><strong>42.5</strong></td>
+      <td><strong>89.9</strong></td>
+      <td><strong>61.3</strong></td>
+      <td><strong>47.5</strong></td>
+      <td><strong>68.0</strong></td>
+      <td><strong>62.4</strong></td>
+      <td><strong>81.0</strong></td>
     </tr>
     <tr style="background:#F2F0EF;color:#6b7280;font-weight:600;text-align:center;">
       <td colspan="9"><em>Proprietary Models</em></td>
@@ -285,6 +297,39 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 
 请注意，*SenseNova-SI-1.1-InternVL3-8B-800K 是基于 SenseNova-SI-800K 子集训练的，旨在为研究人员提供 800K 规模训练数据的性能参考。该模型仅用于规模定律分析和研究验证，不作为 SenseNova-SI 系列的主要推荐模型。
 
+#### 开放式简答题评估
+
+我们从 MMSI 中采样了一个子集 **MMSI-66-VQA**，用于评估模型在选择题（MCQ）和开放式简答题上的表现。开放式简答题由人工标注员进行评估。
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>选择题</th>
+      <th>简答题</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
+    </tr>
+    <tr>
+      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
+    </tr>
+    <tr>
+      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
+    </tr>
+  </tbody>
+</table>
+
+如表格所示，**SenseNova-SI-1.3-InternVL3-8B** 在开放式简答题上表现优异，得分 49.10，甚至高于其选择题得分。
+
 #### 数据格式
 
 我们的数据存储在 **SenseNova-SI-800K.jsonl** 文件中，采用 JSONL（JSON Lines）格式，其中每一行表示一个独立的数据条目。每个条目是一个包含以下三个主要字段的字典：**`id`**, **`conversations`**, and **`image`**. 
@@ -331,7 +376,7 @@ source .venv/bin/activate
 ```bash
 python example.py \
   --question "Hello" \
-  --model_path sensenova/SenseNova-SI-1.1-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 #### 切换已支持的模型
 
@@ -365,7 +410,7 @@ python example_bagel.py \
 python example.py \
   --image_paths examples/Q1_1.png \
   --question "<image>\nConsider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
-  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -394,7 +439,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "<image><image>\nIf the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
-  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -427,7 +472,7 @@ python example.py \
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-1.2-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
