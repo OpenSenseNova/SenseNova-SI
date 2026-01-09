@@ -252,6 +252,38 @@ of which **SenseNova-SI-1.3-InternVL3-8B** achieves state-of-the-art performance
   </tbody>
 </table>
 
+#### Open-ended Question Answering Evaluation
+
+We sampled a subset **MMSI-66-VQA** from MMSI to evaluate model performance on both multiple-choice questions (MCQ) and open-ended short-answer questions. The open-ended short-answer questions are evaluated by human annotators.
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>MCQ</th>
+      <th>Short Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
+    </tr>
+    <tr>
+      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
+    </tr>
+    <tr>
+      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
+    </tr>
+  </tbody>
+</table>
+
+As shown in the table, **SenseNova-SI-1.3-InternVL3-8B** demonstrates improved performance on open-ended short-answer questions, achieving a score of 49.10, which is even higher than its MCQ performance.
 
 ### Datasets
 
@@ -302,39 +334,6 @@ Since SenseNova-SI is designed to study scaling laws, we observe that this initi
 </table>
 
 Note that *SenseNova-SI-1.1-InternVL3-8B-800K is trained on the SenseNova-SI-800K subset to provide a reference for researchers working with the 800K-scale dataset. It is released exclusively for scaling-law analysis and research validation, and is not intended to serve as a primary recommended model of the SenseNova-SI series.
-
-#### Open-ended Question Answering Evaluation
-
-We sampled a subset **MMSI-66-VQA** from MMSI to evaluate model performance on both multiple-choice questions (MCQ) and open-ended short-answer questions. The open-ended short-answer questions are evaluated by human annotators.
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>MCQ</th>
-      <th>Short Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
-    </tr>
-    <tr>
-      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
-    </tr>
-    <tr>
-      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
-    </tr>
-  </tbody>
-</table>
-
-As shown in the table, **SenseNova-SI-1.3-InternVL3-8B** demonstrates improved performance on open-ended short-answer questions, achieving a score of 49.10, which is even higher than its MCQ performance.
 
 #### Data Format
 
@@ -416,7 +415,7 @@ This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 ```bash
 python example.py \
   --image_paths examples/Q1_1.png \
-  --question "<image>\nConsider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --question "Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -446,7 +445,7 @@ This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench):
 ```bash
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
-  --question "<image><image>\nIf the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
+  --question "If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -466,6 +465,37 @@ python example.py \
     </tr>
   </table>
   <p><strong>GT: C</strong></p>
+</details>
+
+
+#### Example 3
+
+This example is from **MMSI-66-VQA**:
+
+```bash
+python example.py \
+  --image_paths examples/Q3_1.png examples/Q3_2.png examples/Q3_3.png \
+  --question "The robot is making tea. What is the order in which the pictures were taken?" \
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+```
+
+<!-- Example 3 -->
+<details open>
+  <summary><strong>Details of Example 3</strong></summary>
+  <p><strong>Q:</strong>The robot is making tea. What is the order in which the pictures were taken?</p>
+  <table>
+    <tr>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_1.png" alt="First image" width="100%">
+      </td>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_2.png" alt="Second image" width="100%">
+      </td>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_3.png" alt="Third image" width="100%">
+      </td>
+    </tr>
+  </table>
 </details>
 
 

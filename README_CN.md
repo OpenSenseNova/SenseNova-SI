@@ -247,6 +247,39 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   </tbody>
 </table>
 
+#### 开放式简答题评估
+
+我们从 MMSI 中采样了一个子集 **MMSI-66-VQA**，用于评估模型在选择题（MCQ）和开放式简答题上的表现。开放式简答题由人工标注员进行评估。
+
+<table>
+  <thead>
+    <tr>
+      <th>模型</th>
+      <th>选择题</th>
+      <th>简答题</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
+    </tr>
+    <tr>
+      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
+    </tr>
+    <tr>
+      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
+    </tr>
+  </tbody>
+</table>
+
+如表格所示，**SenseNova-SI-1.3-InternVL3-8B** 在开放式简答题上表现优异，得分 49.10，甚至高于其选择题得分。
+
 ### 数据集
 
 为推进空间智能领域的研究，我们先发布一个高效的子集 [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K)。
@@ -296,39 +329,6 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 </table>
 
 请注意，*SenseNova-SI-1.1-InternVL3-8B-800K 是基于 SenseNova-SI-800K 子集训练的，旨在为研究人员提供 800K 规模训练数据的性能参考。该模型仅用于规模定律分析和研究验证，不作为 SenseNova-SI 系列的主要推荐模型。
-
-#### 开放式简答题评估
-
-我们从 MMSI 中采样了一个子集 **MMSI-66-VQA**，用于评估模型在选择题（MCQ）和开放式简答题上的表现。开放式简答题由人工标注员进行评估。
-
-<table>
-  <thead>
-    <tr>
-      <th>模型</th>
-      <th>选择题</th>
-      <th>简答题</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
-    </tr>
-    <tr>
-      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
-    </tr>
-    <tr>
-      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
-    </tr>
-  </tbody>
-</table>
-
-如表格所示，**SenseNova-SI-1.3-InternVL3-8B** 在开放式简答题上表现优异，得分 49.10，甚至高于其选择题得分。
 
 #### 数据格式
 
@@ -409,7 +409,7 @@ python example_bagel.py \
 ```bash
 python example.py \
   --image_paths examples/Q1_1.png \
-  --question "<image>\nConsider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --question "Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -438,7 +438,7 @@ python example.py \
 ```bash
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
-  --question "<image><image>\nIf the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
+  --question "If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -458,6 +458,37 @@ python example.py \
     </tr>
   </table>
   <p><strong>正确答案: C</strong></p>
+</details>
+
+
+#### 示例3
+
+该例题源自 **MMSI-66-VQA**：
+
+```bash
+python example.py \
+  --image_paths examples/Q3_1.png examples/Q3_2.png examples/Q3_3.png \
+  --question "The robot is making tea. What is the order in which the pictures were taken?" \
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+```
+
+<!-- Example 3 -->
+<details open>
+  <summary><strong>示例3详情</strong></summary>
+  <p><strong>Q:</strong>The robot is making tea. What is the order in which the pictures were taken?</p>
+  <table>
+    <tr>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_1.png" alt="First image" width="100%">
+      </td>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_2.png" alt="Second image" width="100%">
+      </td>
+      <td align="center" width="33%" style="padding:4px;">
+        <img src="./examples/Q3_3.png" alt="Third image" width="100%">
+      </td>
+    </tr>
+  </table>
 </details>
 
 
