@@ -31,18 +31,22 @@ def to_openai_format(
 
 def reorganize_prompt(message, image_num):
     if image_num == 1:
-        prompt = '<image>\n' + '\n'.join([x['value'] for x in message if x['type'] == 'text'])
+        prompt = "<image>\n" + "\n".join(
+            [x["value"] for x in message if x["type"] == "text"]
+        )
     else:
-        prompt, image_idx = '', 1
+        prompt, image_idx = "", 1
         for x in message:
-            if x['type'] == 'text':
-                prompt += x['value']
-            elif x['type'] == 'image':
-                prompt += f'<Image-{image_idx}>'
+            if x["type"] == "text":
+                prompt += x["value"]
+            elif x["type"] == "image":
+                prompt += f"<Image-{image_idx}>"
                 image_idx += 1
-        prompt = ''.join([f'Image-{i + 1}: <image>\n' for i in range(image_num)]) + prompt
-        images_to_remove = ''.join([f'<Image-{i + 1}>' for i in range(image_num)])
-        prompt = prompt.replace(images_to_remove, '')
+        prompt = (
+            "".join([f"Image-{i + 1}: <image>\n" for i in range(image_num)]) + prompt
+        )
+        images_to_remove = "".join([f"<Image-{i + 1}>" for i in range(image_num)])
+        prompt = prompt.replace(images_to_remove, "")
     return prompt
 
 

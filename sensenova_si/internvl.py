@@ -7,6 +7,7 @@ from transformers import AutoModel, AutoTokenizer
 from .model import Model
 from .utils import load_image, reorganize_prompt, split_model
 
+
 class SenseNovaSIInternVLModel(Model):
     def __init__(
         self,
@@ -43,11 +44,11 @@ class SenseNovaSIInternVLModel(Model):
             for _ in images:
                 message.append({"type": "image", "value": ""})
         message.append({"type": "text", "value": question})
-        
+
         images_num = len(images) if images else 0
 
         prompt = reorganize_prompt(message, images_num)
-        
+
         pixel_values, num_patches_list = None, []
         if images:
             pixel_values, num_patches_list = self.get_pixel_values(images)
@@ -66,18 +67,22 @@ class SenseNovaSIInternVLModel(Model):
     def get_pixel_values(self, image_paths):
         pixel_values_list = []
         num_patches_list = []
-        
+
         # dynamic max number
         if len(image_paths) > 1:
-            max_num = max(1, min(self.max_num_per_image, self.total_max_num // len(image_paths)))
+            max_num = max(
+                1, min(self.max_num_per_image, self.total_max_num // len(image_paths))
+            )
         else:
             max_num = self.max_num_per_image
-        
+
         print(f"Load {len(image_paths)} images...")
         for path in image_paths:
             print(f"Load image {path}...")
             try:
-                pixel_values = load_image(path, max_num=max_num).to(torch.bfloat16).cuda()
+                pixel_values = (
+                    load_image(path, max_num=max_num).to(torch.bfloat16).cuda()
+                )
                 num_patches_list.append(pixel_values.size(0))
                 pixel_values_list.append(pixel_values)
             except Exception as e:
