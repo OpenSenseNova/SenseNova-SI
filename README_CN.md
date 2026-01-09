@@ -156,7 +156,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), 与
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)。
 其中**SenseNova-SI-1.3-InternVL3-8B**在八个近期发布的空间智能基准测试（**VSI**、**MMSI**、**MindCube**、**ViewSpatial**、**SITE**、**BLINK**、**3DSRBench**、**EmbSpatial-Bench**）上，
-在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art）。
+在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art），并显著提升了开放式空间问答能力。
 
 <table>
   <thead>

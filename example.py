@@ -22,7 +22,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_path",
         type=str,
-        default="sensenova/SenseNova-SI-1.2-InternVL3-8B",
+        default="sensenova/SenseNova-SI-1.3-InternVL3-8B",
         help="Model path",
     )
     parser.add_argument(
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--question",
         type=str,
-        default="<image>\nPlease describe the image in detail.",
+        default="Please describe the image in detail.",
         help="Question to ask the model",
     )
     parser.add_argument(

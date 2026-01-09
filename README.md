@@ -159,7 +159,7 @@ In this release, we present
 [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), and
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B),
-of which **SenseNova-SI-1.3-InternVL3-8B** achieves state-of-the-art performance among open-source models of comparable size across eight recent spatial intelligence benchmarks:
+of which **SenseNova-SI-1.3-InternVL3-8B** achieves state-of-the-art performance among open-source models of comparable size across eight recent spatial intelligence benchmarks, while simultaneously enhancing open-ended spatial question-answering:
 **VSI**, **MMSI**, **MindCube**, **ViewSpatial**, **SITE**, **BLINK**, **3DSRBench**, **EmbSpatial-Bench**.
 
 

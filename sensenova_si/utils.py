@@ -35,18 +35,13 @@ def reorganize_prompt(message, image_num):
             [x["value"] for x in message if x["type"] == "text"]
         )
     else:
-        prompt, image_idx = "", 1
+        prompt = ""
         for x in message:
             if x["type"] == "text":
                 prompt += x["value"]
-            elif x["type"] == "image":
-                prompt += f"<Image-{image_idx}>"
-                image_idx += 1
         prompt = (
             "".join([f"Image-{i + 1}: <image>\n" for i in range(image_num)]) + prompt
         )
-        images_to_remove = "".join([f"<Image-{i + 1}>" for i in range(image_num)])
-        prompt = prompt.replace(images_to_remove, "")
     return prompt
 
 
