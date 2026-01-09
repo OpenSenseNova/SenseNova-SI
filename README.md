@@ -252,39 +252,6 @@ of which **SenseNova-SI-1.3-InternVL3-8B** achieves state-of-the-art performance
   </tbody>
 </table>
 
-#### Open-ended Question Answering Evaluation
-
-We sampled a subset **MMSI-66-VQA** from MMSI to evaluate model performance on both multiple-choice questions (MCQ) and open-ended short-answer questions. The open-ended short-answer questions are evaluated by human annotators.
-
-<table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>MCQ</th>
-      <th>Short Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
-    </tr>
-    <tr>
-      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
-    </tr>
-    <tr>
-      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
-    </tr>
-    <tr>
-      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td><td>48.48</td><td>49.10 (<strong>+0.62</strong>)</td>
-    </tr>
-  </tbody>
-</table>
-
-As shown in the table, **SenseNova-SI-1.3-InternVL3-8B** demonstrates improved performance on open-ended short-answer questions, achieving a score of 49.10, which is even higher than its MCQ performance.
-
 ### Datasets
 
 To further facilitate the research in spatial intelligence, we have released a highly effective subset, [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K).
@@ -470,7 +437,7 @@ python example.py \
 
 #### Example 3
 
-This example is from **MMSI-66-VQA** and demonstrates the model's capability in open-ended short-answer questions:
+This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
 
 ```bash
 python example.py \

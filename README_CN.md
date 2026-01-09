@@ -247,39 +247,6 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   </tbody>
 </table>
 
-#### 开放式简答题评估
-
-我们从 MMSI 中采样了一个子集 **MMSI-66-VQA**，用于评估模型在选择题（MCQ）和开放式简答题上的表现。开放式简答题由人工标注员进行评估。
-
-<table>
-  <thead>
-    <tr>
-      <th>模型</th>
-      <th>选择题</th>
-      <th>简答题</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>InternVL3-8B</td><td>31.82</td><td>26.67 (-5.15)</td>
-    </tr>
-    <tr>
-      <td>Cambrian-S-7B</td><td>28.79</td><td>26.36 (-2.43)</td>
-    </tr>
-    <tr>
-      <td>Gemini-3-Pro-Preview</td><td>59.09</td><td>51.52 (-7.57)</td>
-    </tr>
-    <tr>
-      <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
-    </tr>
-    <tr>
-      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td><td>48.48</td><td>49.10 (<strong>+0.62</strong>)</td>
-    </tr>
-  </tbody>
-</table>
-
-如表格所示，**SenseNova-SI-1.3-InternVL3-8B** 在开放式简答题上表现优异，得分 49.10，甚至高于其选择题得分。
-
 ### 数据集
 
 为推进空间智能领域的研究，我们先发布一个高效的子集 [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K)。
@@ -463,7 +430,7 @@ python example.py \
 
 #### 示例3
 
-该例题源自 **MMSI-66-VQA**，用于测试模型的开放式简答题能力：
+该例题源自 [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench)，测试模型在开放式简答题上的能力：
 
 ```bash
 python example.py \
