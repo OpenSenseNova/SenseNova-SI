@@ -273,7 +273,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
     </tr>
     <tr>
-      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
+      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td><td>48.48</td><td>49.10 (<strong>+0.62</strong>)</td>
     </tr>
   </tbody>
 </table>
@@ -463,7 +463,7 @@ python example.py \
 
 #### 示例3
 
-该例题源自 **MMSI-66-VQA**：
+该例题源自 **MMSI-66-VQA**，用于测试模型的开放式简答题能力：
 
 ```bash
 python example.py \
@@ -489,6 +489,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>正确答案: Second, first, third</strong></p>
 </details>
 
 

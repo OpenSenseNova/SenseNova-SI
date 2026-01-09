@@ -278,7 +278,7 @@ We sampled a subset **MMSI-66-VQA** from MMSI to evaluate model performance on b
       <td>SenseNova-SI-1.2-InternVL3-8B</td><td>50.00</td><td>32.72 (-17.28)</td>
     </tr>
     <tr>
-      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>48.48</td><td>49.10 (+0.62)</td>
+      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td><td>48.48</td><td>49.10 (<strong>+0.62</strong>)</td>
     </tr>
   </tbody>
 </table>
@@ -470,7 +470,7 @@ python example.py \
 
 #### Example 3
 
-This example is from **MMSI-66-VQA**:
+This example is from **MMSI-66-VQA** and demonstrates the model's capability in open-ended short-answer questions:
 
 ```bash
 python example.py \
@@ -496,6 +496,7 @@ python example.py \
       </td>
     </tr>
   </table>
+  <p><strong>GT: Second, first, third</strong></p>
 </details>
 
 
