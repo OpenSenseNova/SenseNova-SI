@@ -365,6 +365,8 @@ To use Qwen3-VL:
 ```
 ### Examples
 
+For more examples, see [EXAMPLES.md](docs/EXAMPLES.md).
+
 #### Example for BAGEL generation
 
 To run the image generation example specifically for the BAGEL-7B-MoT structure, use the following command:
@@ -401,7 +403,7 @@ This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 ```bash
 python example.py \
   --image_paths examples/Q1_1.png \
-  --question "Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --question "Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -411,7 +413,7 @@ python example.py \
 <!-- Example 1 -->
 <details open>
   <summary><strong>Details of Example 1</strong></summary>
-  <p><strong>Q:</strong>Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
+  <p><strong>Q: </strong>Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -439,7 +441,7 @@ python example.py \
 <!-- Example 2 -->
 <details open>
   <summary><strong>Details of Example 2</strong></summary>
-  <p><strong>Q:</strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
+  <p><strong>Q: </strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
