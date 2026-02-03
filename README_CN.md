@@ -361,6 +361,8 @@ python example.py \
 
 ### 示例
 
+更多示例请参见 [EXAMPLES.md](docs/EXAMPLES.md)。
+
 #### BAGEL 图像生成示例
 
 若要运行针对 BAGEL-7B-MoT 架构的图像生成示例，请使用以下命令：
@@ -396,7 +398,7 @@ python example_bagel.py \
 ```bash
 python example.py \
   --image_paths examples/Q1_1.png \
-  --question "Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
+  --question "Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
@@ -404,7 +406,7 @@ python example.py \
 <!-- Example 1 -->
 <details open>
   <summary><strong>示例1详情</strong></summary>
-  <p><strong>Q:</strong>Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
+  <p><strong>Q: </strong>Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -431,7 +433,7 @@ python example.py \
 <!-- Example 2 -->
 <details open>
   <summary><strong>示例2详情</strong></summary>
-  <p><strong>Q:</strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
+  <p><strong>Q: </strong>If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``.</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -460,7 +462,7 @@ python example.py \
 <!-- Example 3 -->
 <details open>
   <summary><strong>示例3详情</strong></summary>
-  <p><strong>Q:</strong>The robot is making tea. What is the order in which the pictures were taken?</p>
+  <p><strong>Q: </strong>The robot is making tea. What is the order in which the pictures were taken?</p>
   <table>
     <tr>
       <td align="center" width="33%" style="padding:4px;">

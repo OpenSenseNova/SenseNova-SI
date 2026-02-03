@@ -470,7 +470,7 @@ python example.py \
 <!-- Example 3 -->
 <details open>
   <summary><strong>Details of Example 3</strong></summary>
-  <p><strong>Q:</strong>The robot is making tea. What is the order in which the pictures were taken?</p>
+  <p><strong>Q: </strong>The robot is making tea. What is the order in which the pictures were taken?</p>
   <table>
     <tr>
       <td align="center" width="33%" style="padding:4px;">
