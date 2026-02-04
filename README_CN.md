@@ -361,7 +361,7 @@ python example.py \
 
 ### 示例
 
-更多示例请参见 [EXAMPLES.md](docs/EXAMPLES.md)。
+更多示例请参见 [示例](docs/zh/example.md)。
 
 #### BAGEL 图像生成示例
 

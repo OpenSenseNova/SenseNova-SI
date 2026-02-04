@@ -365,7 +365,7 @@ To use Qwen3-VL:
 ```
 ### Examples
 
-For more examples, see [EXAMPLES.md](docs/EXAMPLES.md).
+For more examples, see [example](docs/en/example.md).
 
 #### Example for BAGEL generation
 
