@@ -234,6 +234,17 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>Cambrian-S-7B</td><td><strong>67.5</strong></td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td><td>37.9</td><td>54.8</td><td>72.8</td>
     </tr>
     <tr>
+      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td>
+      <td><strong>68.6</strong></td>
+      <td><strong>42.5</strong></td>
+      <td><strong>89.9</strong></td>
+      <td><strong>61.3</strong></td>
+      <td><strong>47.5</strong></td>
+      <td><strong>68.0</strong></td>
+      <td><strong>62.4</strong></td>
+      <td><strong>81.0</strong></td>
+    </tr>
+    <tr>
       <td><strong>SenseNova-SI-1.4-InternVL3-8B</strong></td>
       <td>66.6</td>
       <td><strong>40.1</strong></td>
@@ -264,24 +275,26 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 <table>
   <thead>
     <tr>
-      <th>任务</th>
-      <th>InternVL3-8B</th>
-      <th>SenseNova-SI-1.3-InternVL3-8B</th>
-      <th>SenseNova-SI-1.4-InternVL3-8B</th>
+      <th>Model</th>
+      <th>RefCOCO avg</th>
+      <th>CountBench</th>
+      <th>Ibims Relative Depth</th>
+      <th>Ibims Absolute Depth</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>RefCOCO avg</td><td>89.01</td><td>83.85</td><td><strong>89.21</strong></td>
+      <td>InternVL3-8B</td><td>89.01</td><td>81.31</td><td>52.22</td><td>13.45</td>
     </tr>
     <tr>
-      <td>CountBench</td><td>81.31</td><td>73.92</td><td><strong>78.64</strong></td>
+      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>83.85</td><td>73.92</td><td>68.60</td><td>59.23</td>
     </tr>
     <tr>
-      <td>Ibims Relative Depth</td><td>52.22</td><td>68.60</td><td><strong>95.56</strong></td>
-    </tr>
-    <tr>
-      <td>Ibims Absolute Depth</td><td>13.45</td><td>59.23</td><td><strong>80.31</strong></td>
+      <td><strong>SenseNova-SI-1.4-InternVL3-8B</strong></td>
+      <td><strong>89.21</strong></td>
+      <td><strong>78.64</strong></td>
+      <td><strong>95.56</strong></td>
+      <td><strong>80.31</strong></td>
     </tr>
   </tbody>
 </table>
