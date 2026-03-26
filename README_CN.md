@@ -495,8 +495,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q3_1.png examples/Q3_2.png examples/Q3_3.png \
   --question "The robot is making tea. What is the order in which the pictures were taken?" \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 <!-- Example 3 -->
@@ -520,13 +519,13 @@ python example.py \
 </details>
 
 
-#### 示例4（Grounding）
+#### 示例4
 
 该例题展示模型的 **grounding** 能力，数据来自 [RefCOCO](https://github.com/lichengunc/refer)：
 
 ```bash
 python example.py \
-  --image_paths examples/Q4_1.png \
+  --image_paths examples/Q4.png \
   --question "Please provide the bounding box coordinate of the region this sentence describes: <ref>blue shirt lady</ref>" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
@@ -538,7 +537,7 @@ python example.py \
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q4_1.png" alt="First image" width="100%">
+        <img src="./examples/Q4.png" alt="First image" width="100%">
       </td>
     </tr>
   </table>
@@ -546,13 +545,13 @@ python example.py \
 </details>
 
 
-#### 示例5（Depth）
+#### 示例5
 
 该例题展示模型的 **深度估计** 能力：
 
 ```bash
 python example.py \
-  --image_paths examples/Q5_1.png \
+  --image_paths examples/Q5.png \
   --question "Identify the minimal distance between the point and the camera, in meters." \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
@@ -564,7 +563,7 @@ python example.py \
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q5_1.png" alt="First image" width="100%">
+        <img src="./examples/Q5.png" alt="First image" width="100%">
       </td>
     </tr>
   </table>
@@ -583,8 +582,7 @@ python example.py \
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B 
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 ### 评测

@@ -502,8 +502,7 @@ This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) 
 python example.py \
   --image_paths examples/Q3_1.png examples/Q3_2.png examples/Q3_3.png \
   --question "The robot is making tea. What is the order in which the pictures were taken?" \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 <!-- Example 3 -->
@@ -527,26 +526,25 @@ python example.py \
 </details>
 
 
-#### Example 4 (Grounding)
+#### Example 4
 
 This example demonstrates the model's **grounding** capability, from [RefCOCO](https://github.com/lichengunc/refer):
 
 ```bash
 python example.py \
-  --image_paths examples/Q4_1.png \
+  --image_paths examples/Q4.png \
   --question "Please provide the bounding box coordinate of the region this sentence describes: <ref>blue shirt lady</ref>" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 <!-- Example 4 -->
 <details open>
-  <summary><strong>Details of Example 4 (Grounding)</strong></summary>
+  <summary><strong>Details of Example 4</strong></summary>
   <p><strong>Q: </strong>Please provide the bounding box coordinate of the region this sentence describes: &lt;ref&gt;blue shirt lady&lt;/ref&gt;</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q4_1.png" alt="First image" width="100%">
+        <img src="./examples/Q4.png" alt="First image" width="100%">
       </td>
     </tr>
   </table>
@@ -554,26 +552,25 @@ python example.py \
 </details>
 
 
-#### Example 5 (Depth)
+#### Example 5
 
 This example demonstrates the model's **depth estimation** capability:
 
 ```bash
 python example.py \
-  --image_paths examples/Q5_1.png \
+  --image_paths examples/Q5.png \
   --question "Identify the minimal distance between the point and the camera, in meters." \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 <!-- Example 5 -->
 <details open>
-  <summary><strong>Details of Example 5 (Depth)</strong></summary>
+  <summary><strong>Details of Example 5</strong></summary>
   <p><strong>Q: </strong>Identify the minimal distance between the point and the camera, in meters.</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="./examples/Q5_1.png" alt="First image" width="100%">
+        <img src="./examples/Q5.png" alt="First image" width="100%">
       </td>
     </tr>
   </table>
@@ -593,9 +590,7 @@ The model is loaded once and processes questions sequentially. The questions rem
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B 
-# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 ### Evaluation
