@@ -41,6 +41,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
+- [2026-03-27] 我们发布了 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)。训练数据扩展至 **29M** 规模，在多项空间智能基准上保持强劲表现，并相较此前版本在 **grounding** 与 **深度估计** 能力上有显著提升，在 RefCOCO avg 上达到 **89.21**、CountBench 上达到 **78.64**。
 - [2026-02-21] 我们的工作被收录在 CVPR 2026！一篇论文只是一个阶段性的成果，更重要的是继续推动空间智能模型的边界，并将我们的成果与社区分享。
 - [2026-01-09] 我们发布了 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B)，提升了开放式空间简答题能力。
 - [2025-12-06] 为推进空间智能领域的研究，我们先发布一个高效的数据子集, [**SenseNova-SI-800K**](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K), 以及发布模型 [**SenseNova-SI-1.1-InternVL3-8B-800K**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B-800K)。该模型仅使用 SenseNova-SI-800K 子集进行训练，为使用 800K 规模数据进行实验的研究者提供参考。
@@ -62,13 +63,23 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   <tbody>
     <tr>
       <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B/">
+          SenseNova-SI-1.4-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>29M</td>
+      <td>擅长 grounding 与深度估计任务</td>
+    </tr>
+    <tr>
+      <td>
         <a href="https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B/">
           SenseNova-SI-1.3-InternVL3-8B
         </a>
       </td>
       <td>InternVL3</td>
       <td>14M</td>
-      <td>最优模型</td>
+      <td>最优模型，擅长开放式简答题</td>
     </tr>
     <tr>
       <td>
@@ -149,6 +160,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 
 目前，我们基于流行的开源基础模型构建 SenseNova-SI，以最大化与现有研究流程的兼容性。
 在本次发布中，我们推出
+[**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)、
 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B),
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
 [**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B),
@@ -156,8 +168,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 [**SenseNova-SI-1.1-Qwen2.5-VL-7B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-7B),
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), 与
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)。
-其中**SenseNova-SI-1.3-InternVL3-8B**在八个近期发布的空间智能基准测试（**VSI**、**MMSI**、**MindCube**、**ViewSpatial**、**SITE**、**BLINK**、**3DSRBench**、**EmbSpatial-Bench**）上，
-在同等模型规模下均取得了开源模型的最新最优性能（state-of-the-art），并显著提升了开放式空间问答能力。
+其中 **SenseNova-SI-1.4-InternVL3-8B** 在广泛的空间智能基准上表现强劲，在 **grounding** 任务上进一步提升，在 RefCOCO 全部划分上的平均分达到 **89.21**，在 CountBench 上达到 **78.64**。在我们基于 Ibims 数据集构造的深度估计任务中，相对深度达到 **95.56**，绝对深度达到 **80.31**。
 
 <table>
   <thead>
@@ -220,18 +231,18 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>VST-7B-SFT</td><td>60.6</td><td>32.0</td><td>39.7</td><td>50.5</td><td>39.6</td><td>61.9</td><td>54.6</td><td>73.7</td>
     </tr>
     <tr>
-      <td>Cambrian-S-7B</td><td>67.5</td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td><td>37.9</td><td>54.8</td><td>72.8</td>
+      <td>Cambrian-S-7B</td><td><strong>67.5</strong></td><td>25.8</td><td>39.6</td><td>40.9</td><td>33.0</td><td>37.9</td><td>54.8</td><td>72.8</td>
     </tr>
     <tr>
-      <td><strong>SenseNova-SI-1.3-InternVL3-8B</strong></td>
-      <td><strong>68.6</strong></td>
-      <td><strong>42.5</strong></td>
-      <td><strong>89.9</strong></td>
-      <td><strong>61.3</strong></td>
-      <td><strong>47.5</strong></td>
-      <td><strong>68.0</strong></td>
-      <td><strong>62.4</strong></td>
-      <td><strong>81.0</strong></td>
+      <td><strong>SenseNova-SI-1.4-InternVL3-8B</strong></td>
+      <td>66.6</td>
+      <td><strong>40.1</strong></td>
+      <td><strong>88.8</strong></td>
+      <td><strong>55.7</strong></td>
+      <td><strong>47.9</strong></td>
+      <td><strong>68.1</strong></td>
+      <td><strong>60.4</strong></td>
+      <td><strong>81.7</strong></td>
     </tr>
     <tr style="background:#F2F0EF;color:#6b7280;font-weight:600;text-align:center;">
       <td colspan="9"><em>Proprietary Models</em></td>
@@ -244,6 +255,33 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
     <tr style="color:#6b7280;">
       <td>GPT-5-2025-08-07</td><td>55.0</td><td>41.8</td><td>56.3</td><td>45.5</td><td>61.8</td><td>68.0</td><td>60.3</td><td>81.6</td>
+    </tr>
+  </tbody>
+</table>
+
+在 grounding 与深度估计基准上，结果如下：
+
+<table>
+  <thead>
+    <tr>
+      <th>任务</th>
+      <th>InternVL3-8B</th>
+      <th>SenseNova-SI-1.3-InternVL3-8B</th>
+      <th>SenseNova-SI-1.4-InternVL3-8B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RefCOCO avg</td><td>89.01</td><td>83.85</td><td><strong>89.21</strong></td>
+    </tr>
+    <tr>
+      <td>CountBench</td><td>81.31</td><td>73.92</td><td><strong>78.64</strong></td>
+    </tr>
+    <tr>
+      <td>Ibims Relative Depth</td><td>52.22</td><td>68.60</td><td><strong>95.56</strong></td>
+    </tr>
+    <tr>
+      <td>Ibims Absolute Depth</td><td>13.45</td><td>59.23</td><td><strong>80.31</strong></td>
     </tr>
   </tbody>
 </table>
@@ -344,7 +382,7 @@ source .venv/bin/activate
 ```bash
 python example.py \
   --question "Hello" \
-  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 #### 切换已支持的模型
 
@@ -400,7 +438,7 @@ python example_bagel.py \
 python example.py \
   --image_paths examples/Q1_1.png \
   --question "Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
-  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -427,7 +465,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
-  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B 
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -457,7 +495,8 @@ python example.py \
 python example.py \
   --image_paths examples/Q3_1.png examples/Q3_2.png examples/Q3_3.png \
   --question "The robot is making tea. What is the order in which the pictures were taken?" \
-  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 <!-- Example 3 -->
@@ -481,6 +520,58 @@ python example.py \
 </details>
 
 
+#### 示例4（Grounding）
+
+该例题展示模型的 **grounding** 能力，数据来自 [RefCOCO](https://github.com/lichengunc/refer)：
+
+```bash
+python example.py \
+  --image_paths examples/Q4_1.png \
+  --question "Please provide the bounding box coordinate of the region this sentence describes: <ref>blue shirt lady</ref>" \
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+```
+
+<!-- Example 4 -->
+<details open>
+  <summary><strong>示例4详情</strong></summary>
+  <p><strong>Q: </strong>Please provide the bounding box coordinate of the region this sentence describes: &lt;ref&gt;blue shirt lady&lt;/ref&gt;</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q4_1.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案: [0.096234, 0.161229, 0.436516, 1.000000]</strong></p>
+</details>
+
+
+#### 示例5（Depth）
+
+该例题展示模型的 **深度估计** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q5_1.png \
+  --question "Identify the minimal distance between the point and the camera, in meters." \
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+```
+
+<!-- Example 5 -->
+<details open>
+  <summary><strong>示例5详情</strong></summary>
+  <p><strong>Q: </strong>Identify the minimal distance between the point and the camera, in meters.</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q5_1.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案: 4.4</strong></p>
+</details>
+
+
 #### 一次测试多个问题
 
 构建类似于[examples/examples.jsonl](examples/examples.jsonl)的文件，每一行代表一个问题。
@@ -492,8 +583,8 @@ python example.py \
 ```bash
 python example.py \
   --jsonl_path examples/examples.jsonl \
-  --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B 
-# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B 
+# --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
 ### 评测
