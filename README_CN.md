@@ -19,7 +19,7 @@
     <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
     </a>
-    <a href="https://huggingface.co/spaces/lmms-lab-si/EASI-Leaderboard" target="_blank">
+    <a href="https://easi.lmms-lab.com/leaderboard/" target="_blank">
         <img alt="Leaderboard" src="https://img.shields.io/badge/%F0%9F%A4%97%20_EASI-Leaderboard-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
     <a href="https://github.com/EvolvingLMMs-Lab/EASI" target="_blank">
@@ -270,7 +270,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
   </tbody>
 </table>
 
-在 grounding 与深度估计基准上，结果如下：
+在 grounding 与深度估计基准上，我们报告如下结果。如需复现 RefCOCO 与 CountBench 结果，请参考 [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)；深度估计结果基于我们内部构造的测试集评测。
 
 <table>
   <thead>

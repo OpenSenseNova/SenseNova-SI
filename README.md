@@ -19,7 +19,7 @@ English | [简体中文](README_CN.md)
     <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
     </a>
-    <a href="https://huggingface.co/spaces/lmms-lab-si/EASI-Leaderboard" target="_blank">
+    <a href="https://easi.lmms-lab.com/leaderboard/" target="_blank">
         <img alt="Leaderboard" src="https://img.shields.io/badge/%F0%9F%A4%97%20_EASI-Leaderboard-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
     <a href="https://github.com/EvolvingLMMs-Lab/EASI" target="_blank">
@@ -274,7 +274,8 @@ of which **SenseNova-SI-1.4-InternVL3-8B** demonstrates strong spatial intellige
   </tbody>
 </table>
 
-For grounding and depth estimation benchmarks, we report the following results:
+For grounding and depth estimation benchmarks, we report the following results.
+RefCOCO and CountBench are reproduced using [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval), while the depth estimation results are evaluated on our internally constructed test set.
 
 <table>
   <thead>
