@@ -4,7 +4,7 @@ This document lists more examples beyond those in the main [README](../../README
 
 ---
 
-#### Example 4
+#### Example 6
 
 This example is from [MindCube](https://github.com/mll-lab-nu/MindCube):
 
@@ -16,7 +16,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 4</strong></summary>
+  <summary><strong>Details of Example 6</strong></summary>
   <p><strong>Q: </strong>Based on these four images (image 1, 2, 3, and 4) showing the pink bottle from different viewpoints (front, left, back, and right), with each camera aligned with room walls and partially capturing the surroundings: From the viewpoint presented in image 4, what is to the left of the pink bottle?\nOptions: A. Pink plush toy and headboard B. Window and blue curtain C. Closet and door D. White wall\nAnswer with the option's letter from the given choices directly.</p>
   <table>
     <tr>
@@ -39,7 +39,7 @@ python example.py \
 
 ---
 
-#### Example 5
+#### Example 7
 
 This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
@@ -51,7 +51,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 5</strong></summary>
+  <summary><strong>Details of Example 7</strong></summary>
   <p><strong>Q: </strong>Question: Consider the real-world 3D locations and orientations of the objects. Which side of the bus in the center is facing the bus stop?\nOptions: \nA. front\nB. left\nC. back\nD. right\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
@@ -65,7 +65,7 @@ python example.py \
 
 ---
 
-#### Example 6
+#### Example 8
 
 This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
@@ -77,7 +77,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 6</strong></summary>
+  <summary><strong>Details of Example 8</strong></summary>
   <p><strong>Q: </strong>Question: Consider the real-world 3D orientations of the objects. Are the arrow on street sign and the taxi facing same or similar directions, or very different directions? Options: A. same or similar directions, B. very different directions. Give me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
@@ -91,7 +91,7 @@ python example.py \
 
 ---
 
-#### Example 7
+#### Example 9
 
 This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
@@ -103,7 +103,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 7</strong></summary>
+  <summary><strong>Details of Example 9</strong></summary>
   <p><strong>Q: </strong>Question: What shape are all the men standing in?\nOptions: A. circle B. rectangle C. triangle D. square\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
@@ -117,7 +117,7 @@ python example.py \
 
 ---
 
-#### Example 8
+#### Example 10
 
 This example is from [ViewSpatial-Bench](https://github.com/ZJU-REAL/ViewSpatial-Bench):
 
@@ -129,7 +129,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 8</strong></summary>
+  <summary><strong>Details of Example 10</strong></summary>
   <p><strong>Q: </strong>From the perspective of this man who doesn't wear glasses, where is the man wearing glasses located beside him? Options: A. left, B. back-right, C. front, D. right. Answer with the option's letter from the given choices directly.</p>
   <table>
     <tr>
@@ -143,7 +143,7 @@ python example.py \
 
 ---
 
-#### Example 9
+#### Example 11
 
 This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
 
@@ -155,7 +155,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 9</strong></summary>
+  <summary><strong>Details of Example 11</strong></summary>
   <p><strong>Q: </strong>The iMac is in the northern part of the room. In which direction is the area where students do their homework?</p>
   <table>
     <tr>
@@ -172,7 +172,7 @@ python example.py \
 
 ---
 
-#### Example 10
+#### Example 12
 
 This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
 
@@ -184,7 +184,7 @@ python example.py \
 ```
 
 <details open>
-  <summary><strong>Details of Example 10</strong></summary>
+  <summary><strong>Details of Example 12</strong></summary>
   <p><strong>Q: </strong>How many building models are captured in total in these two pictures?</p>
   <table>
     <tr>
