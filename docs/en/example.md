@@ -4,89 +4,37 @@ This document lists more examples beyond those in the main [README](../../README
 
 ---
 
-#### Example 6
+#### Example 8
 
 This example is from [MindCube](https://github.com/mll-lab-nu/MindCube):
 
 ```bash
 python example.py \
-  --image_paths examples/Q6_1.jpg examples/Q6_2.jpg examples/Q6_3.jpg examples/Q6_4.jpg \
+  --image_paths examples/Q8_1.jpg examples/Q8_2.jpg examples/Q8_3.jpg examples/Q8_4.jpg \
   --question "Based on these four images (image 1, 2, 3, and 4) showing the pink bottle from different viewpoints (front, left, back, and right), with each camera aligned with room walls and partially capturing the surroundings: From the viewpoint presented in image 4, what is to the left of the pink bottle?\nOptions: A. Pink plush toy and headboard B. Window and blue curtain C. Closet and door D. White wall\nAnswer with the option's letter from the given choices directly." \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 
 <details open>
-  <summary><strong>Details of Example 6</strong></summary>
+  <summary><strong>Details of Example 8</strong></summary>
   <p><strong>Q: </strong>Based on these four images (image 1, 2, 3, and 4) showing the pink bottle from different viewpoints (front, left, back, and right), with each camera aligned with room walls and partially capturing the surroundings: From the viewpoint presented in image 4, what is to the left of the pink bottle?\nOptions: A. Pink plush toy and headboard B. Window and blue curtain C. Closet and door D. White wall\nAnswer with the option's letter from the given choices directly.</p>
   <table>
     <tr>
       <td align="center" width="25%" style="padding:4px;">
-        <img src="../../examples/Q6_1.jpg" alt="Image 1" width="100%">
+        <img src="../../examples/Q8_1.jpg" alt="Image 1" width="100%">
       </td>
       <td align="center" width="25%" style="padding:4px;">
-        <img src="../../examples/Q6_2.jpg" alt="Image 2" width="100%">
+        <img src="../../examples/Q8_2.jpg" alt="Image 2" width="100%">
       </td>
       <td align="center" width="25%" style="padding:4px;">
-        <img src="../../examples/Q6_3.jpg" alt="Image 3" width="100%">
+        <img src="../../examples/Q8_3.jpg" alt="Image 3" width="100%">
       </td>
       <td align="center" width="25%" style="padding:4px;">
-        <img src="../../examples/Q6_4.jpg" alt="Image 4" width="100%">
+        <img src="../../examples/Q8_4.jpg" alt="Image 4" width="100%">
       </td>
     </tr>
   </table>
   <p><strong>GT: C</strong></p>
-</details>
-
----
-
-#### Example 7
-
-This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
-
-```bash
-python example.py \
-  --image_paths examples/Q7.jpg \
-  --question "Question: Consider the real-world 3D locations and orientations of the objects. Which side of the bus in the center is facing the bus stop?\nOptions: \nA. front\nB. left\nC. back\nD. right\nGive me the answer letter directly. The best answer is:" \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-```
-
-<details open>
-  <summary><strong>Details of Example 7</strong></summary>
-  <p><strong>Q: </strong>Question: Consider the real-world 3D locations and orientations of the objects. Which side of the bus in the center is facing the bus stop?\nOptions: \nA. front\nB. left\nC. back\nD. right\nGive me the answer letter directly. The best answer is:</p>
-  <table>
-    <tr>
-      <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q7.jpg" alt="Image" width="100%">
-      </td>
-    </tr>
-  </table>
-  <p><strong>GT: D</strong></p>
-</details>
-
----
-
-#### Example 8
-
-This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
-
-```bash
-python example.py \
-  --image_paths examples/Q8.jpg \
-  --question "Question: Consider the real-world 3D orientations of the objects. Are the arrow on street sign and the taxi facing same or similar directions, or very different directions?\nOptions: \nA. same or similar directions\nB. very different directions\nGive me the answer letter directly. The best answer is:" \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
-```
-
-<details open>
-  <summary><strong>Details of Example 8</strong></summary>
-  <p><strong>Q: </strong>Question: Consider the real-world 3D orientations of the objects. Are the arrow on street sign and the taxi facing same or similar directions, or very different directions? Options: A. same or similar directions, B. very different directions. Give me the answer letter directly. The best answer is:</p>
-  <table>
-    <tr>
-      <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q8.jpg" alt="Image" width="100%">
-      </td>
-    </tr>
-  </table>
-  <p><strong>GT: A</strong></p>
 </details>
 
 ---
@@ -98,13 +46,13 @@ This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 ```bash
 python example.py \
   --image_paths examples/Q9.jpg \
-  --question "Question: What shape are all the men standing in?\nOptions: A. circle B. rectangle C. triangle D. square\nGive me the answer letter directly. The best answer is:" \
+  --question "Question: Consider the real-world 3D locations and orientations of the objects. Which side of the bus in the center is facing the bus stop?\nOptions: \nA. front\nB. left\nC. back\nD. right\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 
 <details open>
   <summary><strong>Details of Example 9</strong></summary>
-  <p><strong>Q: </strong>Question: What shape are all the men standing in?\nOptions: A. circle B. rectangle C. triangle D. square\nGive me the answer letter directly. The best answer is:</p>
+  <p><strong>Q: </strong>Question: Consider the real-world 3D locations and orientations of the objects. Which side of the bus in the center is facing the bus stop?\nOptions: \nA. front\nB. left\nC. back\nD. right\nGive me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -112,25 +60,25 @@ python example.py \
       </td>
     </tr>
   </table>
-  <p><strong>GT: A</strong></p>
+  <p><strong>GT: D</strong></p>
 </details>
 
 ---
 
 #### Example 10
 
-This example is from [ViewSpatial-Bench](https://github.com/ZJU-REAL/ViewSpatial-Bench):
+This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
 ```bash
 python example.py \
   --image_paths examples/Q10.jpg \
-  --question "From the perspective of this man who doesn't wear glasses, where is the man wearing glasses located beside him?\nOptions: A. left B. back-right C. front D. right\nAnswer with the option's letter from the given choices directly." \
+  --question "Question: Consider the real-world 3D orientations of the objects. Are the arrow on street sign and the taxi facing same or similar directions, or very different directions?\nOptions: \nA. same or similar directions\nB. very different directions\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 
 <details open>
   <summary><strong>Details of Example 10</strong></summary>
-  <p><strong>Q: </strong>From the perspective of this man who doesn't wear glasses, where is the man wearing glasses located beside him? Options: A. left, B. back-right, C. front, D. right. Answer with the option's letter from the given choices directly.</p>
+  <p><strong>Q: </strong>Question: Consider the real-world 3D orientations of the objects. Are the arrow on street sign and the taxi facing same or similar directions, or very different directions? Options: A. same or similar directions, B. very different directions. Give me the answer letter directly. The best answer is:</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
@@ -145,25 +93,77 @@ python example.py \
 
 #### Example 11
 
-This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
+This example is from [SITE-Bench](https://github.com/wenqi-wang20/SITE-Bench):
 
 ```bash
 python example.py \
-  --image_paths examples/Q11_1.png examples/Q11_2.png \
-  --question "The iMac is in the northern part of the room. In which direction is the area where students do their homework?" \
+  --image_paths examples/Q11.jpg \
+  --question "Question: What shape are all the men standing in?\nOptions: A. circle B. rectangle C. triangle D. square\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 
 <details open>
   <summary><strong>Details of Example 11</strong></summary>
+  <p><strong>Q: </strong>Question: What shape are all the men standing in?\nOptions: A. circle B. rectangle C. triangle D. square\nGive me the answer letter directly. The best answer is:</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q11.jpg" alt="Image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: A</strong></p>
+</details>
+
+---
+
+#### Example 12
+
+This example is from [ViewSpatial-Bench](https://github.com/ZJU-REAL/ViewSpatial-Bench):
+
+```bash
+python example.py \
+  --image_paths examples/Q12.jpg \
+  --question "From the perspective of this man who doesn't wear glasses, where is the man wearing glasses located beside him?\nOptions: A. left B. back-right C. front D. right\nAnswer with the option's letter from the given choices directly." \
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+```
+
+<details open>
+  <summary><strong>Details of Example 12</strong></summary>
+  <p><strong>Q: </strong>From the perspective of this man who doesn't wear glasses, where is the man wearing glasses located beside him? Options: A. left, B. back-right, C. front, D. right. Answer with the option's letter from the given choices directly.</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q12.jpg" alt="Image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: A</strong></p>
+</details>
+
+---
+
+#### Example 13
+
+This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
+
+```bash
+python example.py \
+  --image_paths examples/Q13_1.png examples/Q13_2.png \
+  --question "The iMac is in the northern part of the room. In which direction is the area where students do their homework?" \
+  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+```
+
+<details open>
+  <summary><strong>Details of Example 13</strong></summary>
   <p><strong>Q: </strong>The iMac is in the northern part of the room. In which direction is the area where students do their homework?</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q11_1.png" alt="First image" width="100%">
+        <img src="../../examples/Q13_1.png" alt="First image" width="100%">
       </td>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q11_2.png" alt="Second image" width="100%">
+        <img src="../../examples/Q13_2.png" alt="Second image" width="100%">
       </td>
     </tr>
   </table>
@@ -172,27 +172,27 @@ python example.py \
 
 ---
 
-#### Example 12
+#### Example 14
 
 This example is from [MMSI-Bench](https://github.com/InternRobotics/MMSI-Bench) and test the model's capability in open-ended short-answer questions:
 
 ```bash
 python example.py \
-  --image_paths examples/Q12_1.png examples/Q12_2.png \
+  --image_paths examples/Q14_1.png examples/Q14_2.png \
   --question "How many building models are captured in total in these two pictures?" \
   --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
 ```
 
 <details open>
-  <summary><strong>Details of Example 12</strong></summary>
+  <summary><strong>Details of Example 14</strong></summary>
   <p><strong>Q: </strong>How many building models are captured in total in these two pictures?</p>
   <table>
     <tr>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q12_1.png" alt="First image" width="100%">
+        <img src="../../examples/Q14_1.png" alt="First image" width="100%">
       </td>
       <td align="center" width="50%" style="padding:4px;">
-        <img src="../../examples/Q12_2.png" alt="Second image" width="100%">
+        <img src="../../examples/Q14_2.png" alt="Second image" width="100%">
       </td>
     </tr>
   </table>

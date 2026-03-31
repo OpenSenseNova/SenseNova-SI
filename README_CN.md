@@ -41,6 +41,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
+- [2026-03-31] 我们发布了 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B)。在多项空间智能基准上保持强劲表现, 并相较此前版本，显著提升了对**立体几何**问题的分析与解答能力，在SolidGeo MCQ 上达到**63.5** 的准确率。
 - [2026-03-27] 我们发布了 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)。训练数据扩展至 **29M** 规模，在多项空间智能基准上保持强劲表现，并相较此前版本在 **grounding** 与 **深度估计** 能力上有显著提升，在 RefCOCO avg 上达到 **89.21**、CountBench 上达到 **78.64**。
 - [2026-02-21] 我们的工作被收录在 CVPR 2026！一篇论文只是一个阶段性的成果，更重要的是继续推动空间智能模型的边界，并将我们的成果与社区分享。
 - [2026-01-09] 我们发布了 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B)，提升了开放式空间简答题能力。
@@ -61,6 +62,16 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B/">
+          SenseNova-SI-1.5-InternVL3-8B
+        </a>
+      </td>
+      <td>InternVL3</td>
+      <td>1.5M</td>
+      <td>擅长解决立体几何相关问题</td>
+    </tr>
     <tr>
       <td>
         <a href="https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B/">
@@ -160,7 +171,8 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 
 目前，我们基于流行的开源基础模型构建 SenseNova-SI，以最大化与现有研究流程的兼容性。
 在本次发布中，我们推出
-[**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)、
+[**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B),
+[**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B),
 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B),
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
 [**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B),
@@ -169,6 +181,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), 与
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)。
 其中 **SenseNova-SI-1.4-InternVL3-8B** 在广泛的空间智能基准上表现强劲，在 **grounding** 任务上进一步提升，在 RefCOCO 全部划分上的平均分达到 **89.21**，在 CountBench 上达到 **78.64**。在我们基于 Ibims 数据集构造的深度估计任务中，相对深度达到 **95.56**，绝对深度达到 **80.31**。
+**SenseNova-SI-1.5-InternVL3-8B** 展现出较强的空间智能的同时，显著增强了分析和解决 **立体几何** 问题方面的能力。在SolidGeo MCQ上达到了 **63.5** 的准确率. 在基于 K12 题库构建的SolidMath和Math3D中，分别达到了 **72.7**  和 **68.9**。
 
 <table>
   <thead>
@@ -255,6 +268,17 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td><strong>60.4</strong></td>
       <td><strong>81.7</strong></td>
     </tr>
+    <tr>
+      <td><strong>SenseNova-SI-1.5-InternVL3-8B</strong></td>
+      <td><strong>67.3</strong></td>
+      <td><strong>38.3</strong></td>
+      <td><strong>92.1</strong></td>
+      <td><strong>59.0</strong></td>
+      <td><strong>47.5</strong></td>
+      <td><strong>69.5</strong></td>
+      <td><strong>61.3</strong></td>
+      <td><strong>80.3</strong></td>
+    </tr>
     <tr style="background:#F2F0EF;color:#6b7280;font-weight:600;text-align:center;">
       <td colspan="9"><em>Proprietary Models</em></td>
     </tr>
@@ -298,6 +322,39 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
     </tr>
   </tbody>
 </table>
+
+
+在立体几何问题基准上，结果如下。
+SolidGeo MCQ 包括[SolidGeo](https://huggingface.co/datasets/SolidGeo/SolidGeo)中的单项选择题.
+SolidMath 与 Math3D 基准数据集构建自K12题库，收录了中文立体几何选择题。其中SolidMath从同源数据中构建，Math3D从非同源数据中构建。
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>SolidGeo MCQ</th>
+      <th>SpatialViz-Bench</th>
+      <th>SolidMath</th>
+      <th>Math3D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>InternVL3-8B</td><td>36.4</td><td>32.0</td><td>42.5</td><td>43.7</td>
+    </tr>
+    <tr>
+      <td>SenseNova-SI-1.3-InternVL3-8B</td><td>36.5</td><td>29.6</td><td>39.6</td><td>40.3</td>
+    </tr>
+    <tr>
+      <td><strong>SenseNova-SI-1.5-InternVL3-8B</strong></td>
+      <td><strong>63.5</strong></td>
+      <td><strong>33.0</strong></td>
+      <td><strong>72.7</strong></td>
+      <td><strong>68.9</strong></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### 数据集
 
@@ -451,7 +508,7 @@ python example_bagel.py \
 python example.py \
   --image_paths examples/Q1_1.png \
   --question "Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -478,7 +535,7 @@ python example.py \
 python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
-  --model_path sensenova/SenseNova-SI-1.4-InternVL3-8B 
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
 # --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
 ```
 
@@ -581,6 +638,60 @@ python example.py \
     </tr>
   </table>
   <p><strong>正确答案: 4.4</strong></p>
+</details>
+
+
+#### 示例6
+
+此示例展示模型的 **立体几何（三视图）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q6.png \
+  --question "Enclose your thinking process in <think> </think> tags and your final answer in <answer> </answer>" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+
+<!-- Example 6 -->
+<details open>
+  <summary><strong>示例6详情</strong></summary>
+  <p><strong>Q: </strong>Enclose your thinking process in &lt;think> &lt;/think> tags and your final answer in &lt;answer> &lt;/answer></p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q6.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案: D</strong></p>
+</details>
+
+
+#### 示例7
+
+此示例展示模型的 **立体几何（展开图）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q7.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+
+<!-- Example 7 -->
+<details open>
+  <summary><strong>示例7详情</strong></summary>
+  <p><strong>问题：</strong>请将你的思考过程放在&lt;think> &lt;/think>标签内，并将你的最终答案放在&lt;answer> &lt;/answer>标签内。</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="./examples/Q7.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: D</strong></p>
 </details>
 
 
