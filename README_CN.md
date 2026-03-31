@@ -41,7 +41,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
-- [2026-03-31] 我们发布了 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B)。在多项空间智能基准上保持强劲表现, 并相较此前版本，显著提升了对**立体几何**问题的分析与解答能力，在SolidGeo MCQ 上达到**63.5** 的准确率。
+- [2026-04-01] 我们发布了 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B)。在多项空间智能基准上保持强劲表现, 并相较此前版本，显著提升了对**立体几何**问题的分析与解答能力，在SolidGeo MCQ 上达到**63.5** 的准确率。
 - [2026-03-27] 我们发布了 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)。训练数据扩展至 **29M** 规模，在多项空间智能基准上保持强劲表现，并相较此前版本在 **grounding** 与 **深度估计** 能力上有显著提升，在 RefCOCO avg 上达到 **89.21**、CountBench 上达到 **78.64**。
 - [2026-02-21] 我们的工作被收录在 CVPR 2026！一篇论文只是一个阶段性的成果，更重要的是继续推动空间智能模型的边界，并将我们的成果与社区分享。
 - [2026-01-09] 我们发布了 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B)，提升了开放式空间简答题能力。
