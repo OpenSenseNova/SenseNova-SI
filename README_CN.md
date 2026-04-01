@@ -58,6 +58,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <th>模型</th>
       <th>基础架构</th>
       <th>数据集规模</th>
+      <th>EASI-8</th>
       <th>其他说明</th>
     </tr>
   </thead>
@@ -68,9 +69,10 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
           SenseNova-SI-1.5-InternVL3-8B
         </a>
       </td>
-      <td>InternVL3</td>
+      <td>SenseNova-SI-1.4-InternVL3-8B</td>
       <td>1.5M</td>
-      <td>擅长解决立体几何相关问题</td>
+      <td>64.4</td>
+      <td>增强立体几何能力</td>
     </tr>
     <tr>
       <td>
@@ -80,7 +82,8 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>InternVL3</td>
       <td>29M</td>
-      <td>擅长 grounding 与深度估计任务</td>
+      <td>63.7</td>
+      <td>增强grounding与深度估计任务能力</td>
     </tr>
     <tr>
       <td>
@@ -90,7 +93,8 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>InternVL3</td>
       <td>14M</td>
-      <td>最优模型，擅长开放式简答题</td>
+      <td>65.2</td>
+      <td>空间智能最优模型，增强开放式简答题回答能力</td>
     </tr>
     <tr>
       <td>
@@ -100,6 +104,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>InternVL3</td>
       <td>10M</td>
+      <td>64.5</td>
       <td>-</td>
     </tr>
     <tr>
@@ -110,6 +115,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>InternVL3</td>
       <td>8M</td>
+      <td>61.5</td>
       <td>-</td>
     </tr>
     <tr>
@@ -120,6 +126,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>InternVL3</td>
       <td>8M</td>
+      <td>49.4</td>
       <td>-</td>
     </tr>
     <tr>
@@ -130,6 +137,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>Qwen3-VL</td>
       <td>8M</td>
+      <td>58.1</td>
       <td>-</td>
     </tr>
     <tr>
@@ -140,6 +148,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>Qwen2.5-VL</td>
       <td>8M</td>
+      <td>51.0</td>
       <td>-</td>
     </tr>
     <tr>
@@ -150,7 +159,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>Qwen2.5-VL</td>
       <td>8M</td>
-      <td>-</td>
+      <td>45.7</td>
     </tr>
     <tr>
       <td>
@@ -160,6 +169,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       </td>
       <td>BAGEL</td>
       <td>8M</td>
+      <td>48.6</td>
       <td>统一的理解与生成模型</td>
     </tr>
   </tbody>

@@ -62,6 +62,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       <th>Model</th>
       <th>Base Architecture</th>
       <th>SI Dataset Scale</th>
+      <th>EASI-8</th>
       <th>Other Remarks</th>
     </tr>
   </thead>
@@ -72,11 +73,11 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
           SenseNova-SI-1.5-InternVL3-8B
         </a>
       </td>
-      <td>InternVL3</td>
+      <td>SenseNova-SI-1.4-InternVL3-8B</td>
       <td>1.5M</td>
-      <td>Specialized in solid geometry</td>
+      <td>64.4</td>
+      <td>Enhanced capability in solid geometry</td>
     </tr>
-    <tr>
     <tr>
       <td>
         <a href="https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B/">
@@ -85,7 +86,8 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>InternVL3</td>
       <td>29M</td>
-      <td>Specialized in grounding and depth estimation</td>
+      <td>63.7</td>
+      <td>Enhanced capability in grounding and depth estimation</td>
     </tr>
     <tr>
       <td>
@@ -95,7 +97,8 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>InternVL3</td>
       <td>14M</td>
-      <td>Best model; specialized in open-ended short QA</td>
+      <td>65.2</td>
+      <td>Best in spatial intelligence, with enhanced capabilities for open-ended short QA</td>
     </tr>
     <tr>
       <td>
@@ -105,6 +108,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>InternVL3</td>
       <td>10M</td>
+      <td>64.5</td>
       <td>-</td>
     </tr>
     <tr>
@@ -115,6 +119,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>InternVL3</td>
       <td>8M</td>
+      <td>61.5</td>
       <td>-</td>
     </tr>
     <tr>
@@ -125,6 +130,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>InternVL3</td>
       <td>8M</td>
+      <td>49.4</td>
       <td>-</td>
     </tr>
     <tr>
@@ -135,6 +141,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>Qwen3-VL</td>
       <td>8M</td>
+      <td>58.1</td>
       <td>-</td>
     </tr>
     <tr>
@@ -145,6 +152,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>Qwen2.5-VL</td>
       <td>8M</td>
+      <td>51.0</td>
       <td>-</td>
     </tr>
     <tr>
@@ -155,6 +163,7 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>Qwen2.5-VL</td>
       <td>8M</td>
+      <td>45.7</td>
       <td>-</td>
     </tr>
     <tr>
@@ -165,7 +174,8 @@ which achieve state-of-the-art(SOTA) performance among open-source models of com
       </td>
       <td>BAGEL</td>
       <td>8M</td>
-      <td>unified understanding and generation model</td>
+      <td>48.6</td>
+      <td>Unified understanding and generation model</td>
     </tr>
   </tbody>
 </table>
