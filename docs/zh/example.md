@@ -198,3 +198,111 @@ python example.py \
   </table>
   <p><strong>正确答案: 4</strong></p>
 </details>
+
+---
+
+#### 示例 15
+
+此示例展示模型的 **立体几何（三视图）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q15.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 15 -->
+<details open>
+  <summary><strong>示例 15 详情</strong></summary>
+  <p><strong>问题：</strong>请将你的思考过程放在&lt;think> &lt;/think>标签内，并将你的最终答案放在&lt;answer> &lt;/answer>标签内。</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q15.png" alt="第一张图片" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案：B</strong></p>
+</details>
+
+---
+
+#### 示例 16
+
+此示例展示模型的 **立体几何（三视图）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q16.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 6 -->
+<details open>
+  <summary><strong>示例 16 详情</strong></summary>
+  <p><strong>问题：</strong>请将你的思考过程放在&lt;think> &lt;/think>标签内，并将你的最终答案放在&lt;answer> &lt;/answer>标签内。</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q16.png" alt="第一张图片" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案：C</strong></p>
+</details>
+
+---
+
+#### 示例 17
+
+此示例展示模型的 **立体几何（3D图形推理）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q17.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 7 -->
+<details open>
+  <summary><strong>示例 17 详情</strong></summary>
+  <p><strong>问题：</strong>请将你的思考过程放在&lt;think> &lt;/think>标签内，并将你的最终答案放在&lt;answer> &lt;/answer>标签内。</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q17.png" alt="第一张图片" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案：C</strong></p>
+</details>
+
+---
+
+#### 示例 18
+
+此示例展示模型的 **立体几何（三视图）** 能力：
+
+```bash
+python example.py \
+  --image_paths examples/Q18.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 8 -->
+<details open>
+  <summary><strong>示例 18 详情</strong></summary>
+  <p><strong>问题：</strong>请将你的思考过程放在&lt;think> &lt;/think>标签内，并将你的最终答案放在&lt;answer> &lt;/answer>标签内。</p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q18.png" alt="第一张图片" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>正确答案：A</strong></p>
+</details>

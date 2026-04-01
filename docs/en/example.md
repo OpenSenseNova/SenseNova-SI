@@ -198,3 +198,111 @@ python example.py \
   </table>
   <p><strong>GT: 4</strong></p>
 </details>
+
+---
+
+#### Example 15
+
+This example demonstrates the model's capability in **solid geometry(Three views)**:
+
+```bash
+python example.py \
+  --image_paths examples/Q15.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 5 -->
+<details open>
+  <summary><strong>Details of Example 15</strong></summary>
+  <p><strong>Q:</strong> Enclose your thinking process in &lt;think> &lt;/think> tags and your final answer in &lt;answer> &lt;/answer></p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q15.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: B</strong></p>
+</details>
+
+---
+
+#### Example 16
+
+This example demonstrates the model's capability in **solid geometry(Three views)**:
+
+```bash
+python example.py \
+  --image_paths examples/Q16.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 6 -->
+<details open>
+  <summary><strong>Details of Example 16</strong></summary>
+  <p><strong>Q:</strong> Enclose your thinking process in &lt;think> &lt;/think> tags and your final answer in &lt;answer> &lt;/answer></p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q16.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: C</strong></p>
+</details>
+
+---
+
+#### Example 17
+
+This example demonstrates the model's capability in **solid geometry(3D graphic reasoning)**:
+
+```bash
+python example.py \
+  --image_paths examples/Q17.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 7 -->
+<details open>
+  <summary><strong>Details of Example 17</strong></summary>
+  <p><strong>Q:</strong> Enclose your thinking process in &lt;think> &lt;/think> tags and your final answer in &lt;answer> &lt;/answer></p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q17.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: C</strong></p>
+</details>
+
+---
+
+#### Example 18
+
+This example demonstrates the model's capability in **solid geometry(Three views)**:
+
+```bash
+python example.py \
+  --image_paths examples/Q18.png \
+  --question "请将你的思考过程放在<think></think>标签内，并将你的最终答案放在<answer></answer>标签内。" \
+  --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
+```
+
+<!-- Example 3 -->
+<details open>
+  <summary><strong>Details of Example 18</strong></summary>
+  <p><strong>Q:</strong> Enclose your thinking process in &lt;think> &lt;/think> tags and your final answer in &lt;answer> &lt;/answer></p>
+  <table>
+    <tr>
+      <td align="center" width="50%" style="padding:4px;">
+        <img src="../../examples/Q18.png" alt="First image" width="100%">
+      </td>
+    </tr>
+  </table>
+  <p><strong>GT: A</strong></p>
+</details>
