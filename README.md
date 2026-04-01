@@ -196,7 +196,7 @@ In this release, we present
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), and
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B).
 **SenseNova-SI-1.4-InternVL3-8B** demonstrates strong spatial intelligence across a wide range of benchmarks, with improved **grounding** performance, achieving an average score of **89.21** across all RefCOCO splits and **78.64** on CountBench. On our depth estimation task constructed from the Ibims dataset, it reaches **95.56** in relative depth and **80.31** in absolute depth.
-**SenseNova-SI-1.5-InternVL3-8B** exhibits strong spatial intelligence as well as notable improvements in analyzing and solving **solid geometric** problems, achieving an accuracy of **63.5** on SolidGeo MCQ. On benchmarks constructed from K12 question banks, SolidMath and Math3D, it reaches an accuracy of **72.7** and **68.9** respectively.
+**SenseNova-SI-1.5-InternVL3-8B** exhibits strong spatial intelligence as well as notable improvements in analyzing and solving **solid geometric** problems, achieving an accuracy of **63.5** on SolidGeo MCQ. On our internal benchmarks constructed from K12 question banks, SolidMath and Math3D, it reaches an accuracy of **72.7** and **68.9** respectively.
 
 <table>
   <thead>

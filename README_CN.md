@@ -191,7 +191,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 [**SenseNova-SI-1.1-Qwen2.5-VL-3B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen2.5-VL-3B), 与
 [**SenseNova-SI-1.1-InternVL3-2B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-2B)。
 其中 **SenseNova-SI-1.4-InternVL3-8B** 在广泛的空间智能基准上表现强劲，在 **grounding** 任务上进一步提升，在 RefCOCO 全部划分上的平均分达到 **89.21**，在 CountBench 上达到 **78.64**。在我们基于 Ibims 数据集构造的深度估计任务中，相对深度达到 **95.56**，绝对深度达到 **80.31**。
-**SenseNova-SI-1.5-InternVL3-8B** 展现出较强的空间智能的同时，显著增强了分析和解决 **立体几何** 问题方面的能力。在SolidGeo MCQ上达到了 **63.5** 的准确率. 在基于 K12 题库构建的SolidMath和Math3D中，分别达到了 **72.7**  和 **68.9**。
+**SenseNova-SI-1.5-InternVL3-8B** 展现出较强的空间智能的同时，显著增强了分析和解决 **立体几何** 问题方面的能力。在SolidGeo MCQ上达到了 **63.5** 的准确率. 在基于 K12 题库构建的内部基准SolidMath和Math3D中，分别达到了 **72.7**  和 **68.9**。
 
 <table>
   <thead>
