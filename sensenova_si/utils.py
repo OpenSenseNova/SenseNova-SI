@@ -15,17 +15,43 @@ def to_openai_format(
 ):
     if images is None:
         images = []
+    image_num = len(images)
+
+    if image_num == 0:
+        return [{"role": "user", "content": [{"type": "text", "text": question}]}]
+
+    if image_token in question:
+        text_split = question.split(image_token)
+        if len(text_split) == image_num + 1:
+            content = []
+            for i, text in enumerate(text_split):
+                text = text.strip()
+                if text:
+                    content.append({"type": "text", "text": text})
+                if i < len(images):
+                    content.append({"type": "image", "image": images[i]})
+            return [{"role": "user", "content": content}]
+
+    message = []
+    for _ in images:
+        message.append({"type": "image", "value": ""})
+    message.append({"type": "text", "value": question})
+
+    if image_num == 1:
+        text_joined = "\n".join(x["value"] for x in message if x["type"] == "text")
+        content = [
+            {"type": "image", "image": images[0]},
+            {"type": "text", "text": "\n" + text_joined},
+        ]
+        return [{"role": "user", "content": content}]
+
+    text_concat = "".join(x["value"] for x in message if x["type"] == "text")
     content = []
-    text_split = question.split(image_token)
-    assert len(text_split) == len(images) + 1, (
-        f"Number of images {len(images)} does not match number of text splits {len(text_split)}"
-    )
-    for i, text in enumerate(text_split):
-        text = text.strip()
-        if text:
-            content.append({"type": "text", "text": text})
-        if i < len(images):
-            content.append({"type": "image", "image": images[i]})
+    for i in range(image_num):
+        content.append({"type": "text", "text": f"Image-{i + 1}: "})
+        content.append({"type": "image", "image": images[i]})
+        content.append({"type": "text", "text": "\n"})
+    content.append({"type": "text", "text": text_concat})
     return [{"role": "user", "content": content}]
 
 

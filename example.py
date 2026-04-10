@@ -1,9 +1,12 @@
 import argparse
 import json
+import os
 
 import torch
 
 from sensenova_si import get_model
+
+os.environ["HF_HOME"] = "/mnt/aigc/shared_env/huggingface"
 
 
 def set_seed(seed=42):

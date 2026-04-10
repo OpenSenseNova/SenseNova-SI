@@ -41,6 +41,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
+- [2026-04-13] 我们发布了 [**SenseNova-SI-1.3-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-Qwen3-VL-8B)，基于 **Qwen3-VL**、**14M** 规模 SI 数据训练，EASI-8 得分 **61.4**，在广泛空间智能基准上表现强劲，并相较此前 Qwen 系 SenseNova-SI 版本进一步提升了**开放式空间简答题**能力。
 - [2026-04-01] 我们发布了 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B)。在多项空间智能基准上保持强劲表现, 并相较此前版本，显著提升了对**立体几何**问题的分析与解答能力，在SolidGeo MCQ 上达到**63.5** 的准确率。
 - [2026-03-27] 我们发布了 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)。训练数据扩展至 **29M** 规模，在多项空间智能基准上保持强劲表现，并相较此前版本在 **grounding** 与 **深度估计** 能力上有显著提升，在 RefCOCO avg 上达到 **89.21**、CountBench 上达到 **78.64**。
 - [2026-02-21] 我们的工作被收录在 CVPR 2026！一篇论文只是一个阶段性的成果，更重要的是继续推动空间智能模型的边界，并将我们的成果与社区分享。
@@ -95,6 +96,17 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td>14M</td>
       <td>65.2</td>
       <td>空间智能最优模型，增强开放式简答题回答能力</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://huggingface.co/sensenova/SenseNova-SI-1.3-Qwen3-VL-8B/">
+          SenseNova-SI-1.3-Qwen3-VL-8B
+        </a>
+      </td>
+      <td>Qwen3-VL</td>
+      <td>14M</td>
+      <td>61.4</td>
+      <td>增强开放式简答题回答能力</td>
     </tr>
     <tr>
       <td>
@@ -184,6 +196,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B),
 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B),
 [**SenseNova-SI-1.3-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-InternVL3-8B),
+[**SenseNova-SI-1.3-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-Qwen3-VL-8B),
 [**SenseNova-SI-1.2-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.2-InternVL3-8B),
 [**SenseNova-SI-1.1-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-InternVL3-8B),
 [**SenseNova-SI-1.1-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.1-Qwen3-VL-8B),
@@ -266,6 +279,17 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
       <td><strong>68.0</strong></td>
       <td><strong>62.4</strong></td>
       <td><strong>81.0</strong></td>
+    </tr>
+    <tr>
+      <td><strong>SenseNova-SI-1.3-Qwen3-VL-8B</strong></td>
+      <td><strong>67.8</strong></td>
+      <td><strong>39.5</strong></td>
+      <td><strong>68.3</strong></td>
+      <td><strong>55.8</strong></td>
+      <td><strong>57.5</strong></td>
+      <td><strong>63.0</strong></td>
+      <td><strong>57.3</strong></td>
+      <td><strong>82.1</strong></td>
     </tr>
     <tr>
       <td><strong>SenseNova-SI-1.4-InternVL3-8B</strong></td>
@@ -475,7 +499,7 @@ python example.py \
 
 使用 **Qwen3-VL** 模型：
 ```bash
---model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+--model_path sensenova/SenseNova-SI-1.3-Qwen3-VL-8B
 ```
 
 ### 示例
@@ -519,7 +543,7 @@ python example.py \
   --image_paths examples/Q1_1.png \
   --question "Question: Consider the real-world 3D locations of the objects. Which is closer to the sink, the toilet paper or the towel?\nOptions: \nA. toilet paper\nB. towel\nGive me the answer letter directly. The best answer is:" \
   --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+# --model_path sensenova/SenseNova-SI-1.3-Qwen3-VL-8B
 ```
 
 <!-- Example 1 -->
@@ -546,7 +570,7 @@ python example.py \
   --image_paths examples/Q2_1.png examples/Q2_2.png \
   --question "If the landscape painting is on the east side of the bedroom, where is the window located in the bedroom?\nOptions: A. North side, B. South side, C. West side, D. East side\nAnswer with the option's letter from the given choices directly. Enclose the option's letter within ``." \
   --model_path sensenova/SenseNova-SI-1.5-InternVL3-8B
-# --model_path sensenova/SenseNova-SI-1.1-Qwen3-VL-8B
+# --model_path sensenova/SenseNova-SI-1.3-Qwen3-VL-8B
 ```
 
 <!-- Example 2 -->
