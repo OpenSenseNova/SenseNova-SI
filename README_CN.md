@@ -743,6 +743,10 @@ python example.py \
   --model_path sensenova/SenseNova-SI-1.3-InternVL3-8B
 ```
 
+### 训练
+
+训练 SenseNova-SI-Qwen3-VL-8B，请参考 [training/training_qwen3_vl.md](training/training_qwen3_vl.md)。
+
 ### 评测
 
 如需复现上述基准测试结果，请参考 [EASI](https://github.com/EvolvingLMMs-Lab/EASI) 在主流空间智能基准上评估 SenseNova-SI 的表现。
