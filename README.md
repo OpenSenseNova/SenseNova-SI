@@ -16,6 +16,9 @@ English | [简体中文](README_CN.md)
     <a href="https://huggingface.co/collections/sensenova/sensenova-si" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI-Models-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
+    <a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K" target="_blank">
+        <img alt="SenseNova-SI-800K" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI_800K-Data-ffc107?color=ffc107&logoColor=white" height="20" />
+    </a>
     <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
     </a>
