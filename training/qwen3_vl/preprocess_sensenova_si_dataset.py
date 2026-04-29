@@ -68,7 +68,9 @@ def map_conversations_to_messages(sample: dict[str, Any]) -> bool:
 
 def default_output_path(src_path: Path) -> Path:
     """Build default output path with `_qwen3vl_format` suffix."""
-    return src_path.with_name(f"{src_path.stem}_qwen3vl_format{src_path.suffix or '.jsonl'}")
+    return src_path.with_name(
+        f"{src_path.stem}_qwen3vl_format{src_path.suffix or '.jsonl'}"
+    )
 
 
 def preprocess_jsonl(src_path: Path, dst_path: Path) -> None:
@@ -79,7 +81,10 @@ def preprocess_jsonl(src_path: Path, dst_path: Path) -> None:
 
     dst_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with src_path.open("r", encoding="utf-8") as source, dst_path.open("w", encoding="utf-8") as target:
+    with (
+        src_path.open("r", encoding="utf-8") as source,
+        dst_path.open("w", encoding="utf-8") as target,
+    ):
         for line_number, line in enumerate(source, start=1):
             stripped = line.strip()
             if not stripped:
@@ -88,7 +93,9 @@ def preprocess_jsonl(src_path: Path, dst_path: Path) -> None:
             try:
                 sample = json.loads(stripped)
             except json.JSONDecodeError as error:
-                raise ValueError(f"Invalid JSON at line {line_number}: {error}") from error
+                raise ValueError(
+                    f"Invalid JSON at line {line_number}: {error}"
+                ) from error
 
             if not isinstance(sample, dict):
                 raise ValueError(f"Line {line_number} is not a JSON object.")
@@ -112,8 +119,15 @@ def preprocess_jsonl(src_path: Path, dst_path: Path) -> None:
 
 def build_args() -> argparse.Namespace:
     """Build and parse CLI arguments."""
-    parser = argparse.ArgumentParser(description="Preprocess SenseNova-SI dataset JSONL for lmms-engine training.")
-    parser.add_argument("--src", required=True, type=Path, help="Path to original SenseNova-SI dataset JSONL.")
+    parser = argparse.ArgumentParser(
+        description="Preprocess SenseNova-SI dataset JSONL for lmms-engine training."
+    )
+    parser.add_argument(
+        "--src",
+        required=True,
+        type=Path,
+        help="Path to original SenseNova-SI dataset JSONL.",
+    )
     parser.add_argument(
         "--dst",
         type=Path,
