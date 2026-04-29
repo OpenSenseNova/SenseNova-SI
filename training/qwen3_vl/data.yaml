@@ -1,4 +1,4 @@
 datasets:
-  - path: /path/to/SenseNova-SI-800K/SenseNova-SI-800K.jsonl
+  - path: /path/to/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
     data_folder: /path/to/SenseNova-SI-800K/
     data_type: jsonl

@@ -818,6 +818,28 @@ uv pip install flash-attn --no-build-isolation
 uv pip install liger-kernel
 ```
 
+**Preprocess dataset**
+
+Convert `SenseNova-SI-800K.jsonl` to Qwen3-VL training format:
+
+```bash
+python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
+  --src data/SenseNova-SI-800K.jsonl \
+  --dst data/SenseNova-SI-800K_qwen3vl_format.jsonl
+```
+
+**Prepare dataset YAML**
+see [training/qwen3_vl/data.yaml](training/qwen3_vl/data.yaml)
+```YAML
+datasets:
+  - path: /path/to/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
+    data_folder: /path/to/SenseNova-SI-800K/
+    data_type: jsonl
+```
+
+**Configure training**
+See [training/qwen3_vl/train_config.yaml](training/qwen3_vl/train_config.yaml)
+
 **Run training**
 
 ```bash
