@@ -751,6 +751,7 @@ python example.py \
 
 #### 1. 下载数据集
 
+用户可选择下载 [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K) (一个下采样子集，专门用于研究尺度效应)或 [SenseNova-SI-8M](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M) (官方全量训练数据集).
 将 [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K) 下载到 `training/data/` 目录：
 
 ```bash
@@ -826,11 +827,11 @@ uv pip install liger-kernel
 ```bash
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
   --src data/SenseNova-SI-800K.jsonl \
-  --dst data/SenseNova-SI-800K_qwen3vl_format.jsonl
+  --dst data/SenseNova-SI-800K_qwen3vl_format.jsonl  #预处理 SenseNova-SI-800K数据
 
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
   --src data/SenseNova-SI-8M.jsonl \
-  --dst data/SenseNova-SI-8M_qwen3vl_format.jsonl
+  --dst data/SenseNova-SI-8M_qwen3vl_format.jsonl  #预处理 SenseNova-SI-8M数据
 ```
 
 **准备数据 YAML**

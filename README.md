@@ -761,6 +761,7 @@ python example.py \
 
 #### 1. Download Dataset
 
+User may choose to download [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K) (a downsampled subset of SenseNova-SI-8M, specifically designed for studying scaling laws) or [SenseNova-SI-8M](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M) (official full-scale training dataset).
 Download [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova-SI-800K) into `training/data/`:
 
 ```bash
@@ -836,11 +837,11 @@ Convert `SenseNova-SI-800K.jsonl` and `SenseNova-SI-8M.jsonl` to Qwen3-VL traini
 ```bash
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
   --src data/SenseNova-SI-800K/SenseNova-SI-800K.jsonl \
-  --dst data/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
+  --dst data/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl  #Preprocess SenseNova-SI-800K data
 
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
   --src data/SenseNova-SI-8M/SenseNova-SI-8M.jsonl \
-  --dst data/SenseNova-SI-8M/SenseNova-SI-8M_qwen3vl_format.jsonl
+  --dst data/SenseNova-SI-8M/SenseNova-SI-8M_qwen3vl_format.jsonl  #Preprocess SenseNova-SI-8M data
 ```
 
 **Prepare dataset YAML**
