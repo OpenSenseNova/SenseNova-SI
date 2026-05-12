@@ -16,8 +16,8 @@
     <a href="https://huggingface.co/collections/sensenova/sensenova-si" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI-Models-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
-    <a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K" target="_blank">
-        <img alt="SenseNova-SI-800K" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI_800K-Data-ffc107?color=ffc107&logoColor=white" height="20" />
+    <a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-8M" target="_blank">
+        <img alt="SenseNova-SI-8M" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI_8M-Data-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
     <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
@@ -44,6 +44,7 @@ SenseNova-SI是一个持续迭代的项目，所有新训练的多模态空间�
 *后续 SenseNova-SI 将与更大规模的内部模型进行集成。*
 
 ## 新闻
+- [2026-05-12] 我们发布了 SenseNova-SI 系列的正式全量训练数据，[**SenseNova-SI-8M**](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M)。SenseNova-SI-8M 包含 约 812 万 条精心整理的训练样本，覆盖 约 276 万 张唯一图像，分布在 151 个数据集中。 
 - [2026-04-13] 我们发布了 [**SenseNova-SI-1.3-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-Qwen3-VL-8B)，基于 **Qwen3-VL**、**14M** 规模 SI 数据训练，EASI-8 得分 **61.4**，在广泛空间智能基准上表现强劲，并相较此前 Qwen 系 SenseNova-SI 版本进一步提升了**开放式空间简答题**能力。
 - [2026-04-01] 我们发布了 [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B)。在多项空间智能基准上保持强劲表现, 并相较此前版本，显著提升了对**立体几何**问题的分析与解答能力，在SolidGeo MCQ 上达到**63.5** 的准确率。
 - [2026-03-27] 我们发布了 [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B)。训练数据扩展至 **29M** 规模，在多项空间智能基准上保持强劲表现，并相较此前版本在 **grounding** 与 **深度估计** 能力上有显著提升，在 RefCOCO avg 上达到 **89.21**、CountBench 上达到 **78.64**。
@@ -757,6 +758,13 @@ pip install huggingface_hub
 huggingface-cli download sensenova/SenseNova-SI-800K --repo-type dataset --local-dir training/data/SenseNova-SI-800K
 ```
 
+将 [SenseNova-SI-8M](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M) 下载到 `training/data/` 目录：
+
+```bash
+pip install huggingface_hub
+huggingface-cli download sensenova/SenseNova-SI-8M --repo-type dataset --local-dir training/data/SenseNova-SI-8M
+```
+
 #### 2(a). 训练InternVL架构模型
 
 **载预训练模型**
@@ -780,8 +788,9 @@ uv pip install flash-attn==2.3.6
 **开始训练**
 
 ```bash
-bash training/InternVL/internvl_chat/shell/sensenova_si_800k_internvl3_8b.sh
-3. 使用 Qwen3-VL 进行训练
+bash training/InternVL/internvl_chat/shell/sensenova_si_800k_internvl3_8b.sh  #用SenseNova-SI-800K数据训练
+
+bash training/intern_vl/internvl_chat/shell/sensenova_si_8M_internvl3_8b.sh  #或者用SenseNova-SI-8M数据训练
 ```
 
 #### 2(b). 训练Qwen3-VL架构模型
@@ -812,31 +821,31 @@ uv pip install liger-kernel
 
 **数据预处理**
 
-先将 `SenseNova-SI-800K.jsonl` 转换为 Qwen3-VL 训练数据格式：
+先将 `SenseNova-SI-800K.jsonl` 和 `SenseNova-SI-8M.jsonl` 转换为 Qwen3-VL 训练数据格式：
 
 ```bash
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
   --src data/SenseNova-SI-800K.jsonl \
   --dst data/SenseNova-SI-800K_qwen3vl_format.jsonl
+
+python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
+  --src data/SenseNova-SI-8M.jsonl \
+  --dst data/SenseNova-SI-8M_qwen3vl_format.jsonl
 ```
 
 **准备数据 YAML**
-参考 [training/qwen3_vl/data.yaml](training/qwen3_vl/data.yaml)
-```YAML
-datasets:
-  - path: /path/to/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
-    data_folder: /path/to/SenseNova-SI-800K/
-    data_type: jsonl
-```
+参考 [training/qwen3_vl/data_800K.yaml](training/qwen3_vl/data_800K.yaml) 和 [training/qwen3_vl/data_8M.yaml](training/qwen3_vl/data_8M.yaml)
 
 **配置训练参数**
-参考 [training/qwen3_vl/train_config.yaml](training/qwen3_vl/train_config.yaml)
+参考 [training/qwen3_vl/train_config_800K.yaml](training/qwen3_vl/train_config_800K.yaml) 和 [training/qwen3_vl/train_config_8M.yaml](training/qwen3_vl/train_config_8M.yaml)
 
 **开始训练**
 
 ```bash
 # Single node, 8 GPUs (default)
-bash training/qwen3_vl/run.sh
+bash training/qwen3_vl/run.sh 800K  #用SenseNova-SI-800K数据训练
+
+bash training/qwen3_vl/run.sh 8M  #或者用SenseNova-SI-8M数据训练
 ```
 
 #### 2(c). 训练BAGEL架构模型
@@ -862,7 +871,9 @@ uv pip install flash_attn==2.5.8 --no-build-isolation
 **开始训练**
 
 ```bash
-bash training/Bagel/scripts/train_sensenova_si_800k.sh
+bash training/Bagel/scripts/train_sensenova_si_800k.sh  #用SenseNova-SI-800K数据训练
+
+bash training/bagel/scripts/train_sensenova_si_8M.sh  #或者用SenseNova-SI-8M数据训练
 ```
 
 有关训练超参数（如学习率、batch size、FSDP 配置等）的详细信息，请参考 [training/Bagel/TRAIN.md](training/Bagel/TRAIN.md)。

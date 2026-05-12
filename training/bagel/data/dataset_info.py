@@ -14,6 +14,7 @@ from .vlm_dataset import SftJSONLIterableDataset
 
 DATASET_REGISTRY = {
     "sensenova_si_800k": SftJSONLIterableDataset,
+    "sensenova_si_8M": SftJSONLIterableDataset,
 }
 
 DATASET_INFO = {}

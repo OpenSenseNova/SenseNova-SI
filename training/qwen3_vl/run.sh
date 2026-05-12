@@ -56,6 +56,24 @@
 # Number of GPUs
 NGPUS=8
 
+# Dataset scale: first argument 800K or 8M (default: 800K).
+# Example: bash training/qwen3_vl/run.sh 8M
+DATA_SCALE="${1:-800K}"
+case "${DATA_SCALE}" in
+  800K)
+    TRAIN_CONFIG="training/qwen3_vl/train_config_800K.yaml"
+    ;;
+  8M)
+    TRAIN_CONFIG="training/qwen3_vl/train_config_8M.yaml"
+    ;;
+  *)
+    echo "Usage: $0 [800K|8M]" >&2
+    echo "  800K  SenseNova-SI 800K preset (train_config_800K.yaml + data_800K.yaml)" >&2
+    echo "  8M    SenseNova-SI 8M preset (train_config_8M.yaml + data_8M.yaml)" >&2
+    exit 1
+    ;;
+esac
+
 # Training command
 torchrun --nproc_per_node=${NGPUS} \
   --nnodes=1 \
@@ -63,7 +81,7 @@ torchrun --nproc_per_node=${NGPUS} \
   --master_addr=127.0.0.1 \
   --master_port=12355 \
   -m lmms_engine.launch.cli \
-  config_yaml=training/qwen3_vl/train_config.yaml
+  config_yaml="${TRAIN_CONFIG}"
 
 ################################################################################
 # MULTI-NODE TRAINING:

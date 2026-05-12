@@ -1,0 +1,10 @@
+{
+    "sensenova_si_8M": {
+        "root": "__TRAINING_ROOT__/data/SenseNova-SI-8M/",
+        "annotation": "__TRAINING_ROOT__/data/SenseNova-SI-8M/SenseNova-SI-8M.jsonl",
+        "data_augment": false,
+        "max_dynamic_patch": 12,
+        "repeat_time": 1,
+        "length": 8165067
+    }
+}

@@ -16,8 +16,8 @@ English | [简体中文](README_CN.md)
     <a href="https://huggingface.co/collections/sensenova/sensenova-si" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI-Models-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
-    <a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-800K" target="_blank">
-        <img alt="SenseNova-SI-800K" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI_800K-Data-ffc107?color=ffc107&logoColor=white" height="20" />
+    <a href="https://huggingface.co/datasets/sensenova/SenseNova-SI-8M" target="_blank">
+        <img alt="SenseNova-SI-8M" src="https://img.shields.io/badge/%F0%9F%A4%97%20_SenseNova_SI_8M-Data-ffc107?color=ffc107&logoColor=white" height="20" />
     </a>
     <a href="https://modelscope.cn/collections/SenseNova-SI-a1d78333be8d42" target="_blank">
         <img alt="SenseNova-SI" src="https://img.shields.io/badge/🤖 ModelScope-Models-blue" height="20" />
@@ -47,6 +47,7 @@ All newly trained multimodal foundation models are publicly released to facilita
 *In the future, SenseNova-SI will be integrated with larger-scale in-house models.*
 
 ## News
+- [2026-05-12] We have released official full-scale training dataset of the SenseNova-SI series, [**SenseNova-SI-8M**](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M). SenseNova-SI-8M contains ~8.16 million carefully curated training samples spanning ~2.72 million unique images across 151 datasets.
 - [2026-04-13] We have released [**SenseNova-SI-1.3-Qwen3-VL-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.3-Qwen3-VL-8B), built on **Qwen3-VL** with **14M** SI training data, demonstrating strong spatial intelligence across benchmarks and improved **open-ended spatial question-answering** compared to earlier SenseNova-SI Qwen variants.
 - [2026-04-01] We have released [**SenseNova-SI-1.5-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.5-InternVL3-8B), which significantly improves **solid geometric** question-answering and analyzing capabilities, achieving an accuracy of **63.5** on SolidGeo MCQ.
 - [2026-03-27] We have released [**SenseNova-SI-1.4-InternVL3-8B**](https://huggingface.co/sensenova/SenseNova-SI-1.4-InternVL3-8B), which significantly improves **grounding** and **depth estimation** capabilities, achieving **89.21** on RefCOCO avg and **78.64** on CountBench.
@@ -766,6 +767,14 @@ Download [SenseNova-SI-800K](https://huggingface.co/datasets/sensenova/SenseNova
 pip install huggingface_hub
 huggingface-cli download sensenova/SenseNova-SI-800K --repo-type dataset --local-dir training/data/SenseNova-SI-800K
 ```
+
+Download [SenseNova-SI-8M](https://huggingface.co/datasets/sensenova/SenseNova-SI-8M) into `training/data/`:
+
+```bash
+pip install huggingface_hub
+huggingface-cli download sensenova/SenseNova-SI-8M --repo-type dataset --local-dir training/data/SenseNova-SI-8M
+```
+
 #### 2(a). Training with InternVL
 
 **Download pretrained model**
@@ -789,7 +798,9 @@ uv pip install flash-attn==2.3.6
 **Run training**
 
 ```bash
-bash training/intern_vl/internvl_chat/shell/sensenova_si_800k_internvl3_8b.sh
+bash training/intern_vl/internvl_chat/shell/sensenova_si_800k_internvl3_8b.sh  #Train with SenseNova-SI-800K data
+
+bash training/intern_vl/internvl_chat/shell/sensenova_si_8M_internvl3_8b.sh  # Or train with SenseNova-SI-8M data
 ```
 
 #### 2(b). Training with Qwen3-VL
@@ -820,31 +831,31 @@ uv pip install liger-kernel
 
 **Preprocess dataset**
 
-Convert `SenseNova-SI-800K.jsonl` to Qwen3-VL training format:
+Convert `SenseNova-SI-800K.jsonl` and `SenseNova-SI-8M.jsonl` to Qwen3-VL training format:
 
 ```bash
 python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
-  --src data/SenseNova-SI-800K.jsonl \
-  --dst data/SenseNova-SI-800K_qwen3vl_format.jsonl
+  --src data/SenseNova-SI-800K/SenseNova-SI-800K.jsonl \
+  --dst data/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
+
+python training/qwen3_vl/preprocess_sensenova_si_dataset.py \
+  --src data/SenseNova-SI-8M/SenseNova-SI-8M.jsonl \
+  --dst data/SenseNova-SI-8M/SenseNova-SI-8M_qwen3vl_format.jsonl
 ```
 
 **Prepare dataset YAML**
-see [training/qwen3_vl/data.yaml](training/qwen3_vl/data.yaml)
-```YAML
-datasets:
-  - path: /path/to/SenseNova-SI-800K/SenseNova-SI-800K_qwen3vl_format.jsonl
-    data_folder: /path/to/SenseNova-SI-800K/
-    data_type: jsonl
-```
+see [training/qwen3_vl/data_800K.yaml](training/qwen3_vl/data_800K.yaml) and [training/qwen3_vl/data_8M.yaml](training/qwen3_vl/data_8M.yaml)
 
 **Configure training**
-See [training/qwen3_vl/train_config.yaml](training/qwen3_vl/train_config.yaml)
+See [training/qwen3_vl/train_config_800K.yaml](training/qwen3_vl/train_config_800K.yaml) and [training/qwen3_vl/train_config_8M.yaml](training/qwen3_vl/train_config_8M.yaml)
 
 **Run training**
 
 ```bash
 # Single node, 8 GPUs (default)
-bash training/qwen3_vl/run.sh
+bash training/qwen3_vl/run.sh 800K  #Train with SenseNova-SI-800K data
+
+bash training/qwen3_vl/run.sh 8M  # Or train with SenseNova-SI-8M data
 ```
 
 
@@ -871,7 +882,9 @@ uv pip install flash_attn==2.5.8 --no-build-isolation
 **Run training**
 
 ```bash
-bash training/bagel/scripts/train_sensenova_si_800k.sh
+bash training/bagel/scripts/train_sensenova_si_800k.sh  #Train with SenseNova-SI-800K data
+
+bash training/bagel/scripts/train_sensenova_si_8M.sh  # Or train with SenseNova-SI-8M data
 ```
 
 For details on training hyperparameters (learning rate, batch size, FSDP config, etc.), refer to [training/bagel/TRAIN.md](training/bagel/TRAIN.md).

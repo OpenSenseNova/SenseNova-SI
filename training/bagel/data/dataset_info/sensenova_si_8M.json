@@ -1,0 +1,7 @@
+{
+  "sensenova_si_8M": {
+      "data_dir": "__TRAINING_ROOT__/data/SenseNova-SI-8M/",
+      "jsonl_path": "__TRAINING_ROOT__/data/SenseNova-SI-8M/SenseNova-SI-8M.jsonl",
+      "num_total_samples": 8165067
+  }
+}

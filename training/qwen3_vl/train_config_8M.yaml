@@ -6,7 +6,7 @@ dataset_config:
   processor_config:
     processor_name: Qwen/Qwen3-VL-8B-Instruct
     processor_type: qwen3_vl
-  dataset_path: training/qwen3_vl/data.yaml
+  dataset_path: training/qwen3_vl/data_8M.yaml
   datasets: null
   shuffle: true
   eval_dataset_path: null
@@ -25,7 +25,7 @@ dataset_config:
   fps: 1
   video_backend: qwen_vl_utils
 trainer_args:
-  output_dir: ./output/qwen3_vl_training
+  output_dir: ./results/qwen3_vl/sensenova_si_8M
   overwrite_output_dir: false
   do_train: false
   do_eval: false
