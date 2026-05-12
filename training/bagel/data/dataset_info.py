@@ -13,7 +13,7 @@ from .t2i_dataset_jsonl import T2IJSONLIterableDataset
 from .vlm_dataset import SftJSONLIterableDataset
 
 DATASET_REGISTRY = {
-    "sensenova_si_800k": SftJSONLIterableDataset,
+    "sensenova_si_800K": SftJSONLIterableDataset,
     "sensenova_si_8M": SftJSONLIterableDataset,
 }
 

@@ -1,7 +1,7 @@
 {
-    "sensenova_si_800k": {
+    "sensenova_si_800K": {
         "root": "__TRAINING_ROOT__/data/SenseNova-SI-800K/",
-        "annotation": "__TRAINING_ROOT__/data/SenseNova-SI-800K/SenseNova-SI-800K_existing_images.jsonl",
+        "annotation": "__TRAINING_ROOT__/data/SenseNova-SI-800K/SenseNova-SI-800K.jsonl",
         "data_augment": false,
         "max_dynamic_patch": 12,
         "repeat_time": 1,

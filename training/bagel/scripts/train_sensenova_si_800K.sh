@@ -34,8 +34,8 @@ TRAINING_ROOT="$(python -c 'import pathlib; print(pathlib.Path("'"${REPO_DIR}"'"
 MODEL_PATH="${MODEL_PATH:-${TRAINING_ROOT}/pretrained_models/BAGEL-7B-MoT}"
 NPROC_PER_NODE=${NPROC_PER_NODE:-8}
 NNODES=${NNODES:-1}
-RESULTS_DIR="${RESULTS_DIR:-${TRAINING_ROOT}/results/bagel/sensenova_si_800k}"
-DATASET_CONFIG_FILE="${DATASET_CONFIG_FILE:-${REPO_DIR}/data/configs/sensenova_si_800k.yaml}"
+RESULTS_DIR="${RESULTS_DIR:-${TRAINING_ROOT}/results/bagel/sensenova_si_800K}"
+DATASET_CONFIG_FILE="${DATASET_CONFIG_FILE:-${REPO_DIR}/data/configs/sensenova_si_800K.yaml}"
 
 export PYTHONPATH="${PYTHONPATH}:${REPO_DIR}"
 export TRAINING_ROOT="${TRAINING_ROOT}"

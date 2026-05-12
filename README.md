@@ -798,7 +798,7 @@ uv pip install flash-attn==2.3.6
 **Run training**
 
 ```bash
-bash training/intern_vl/internvl_chat/shell/sensenova_si_800k_internvl3_8b.sh  #Train with SenseNova-SI-800K data
+bash training/intern_vl/internvl_chat/shell/sensenova_si_800K_internvl3_8b.sh  #Train with SenseNova-SI-800K data
 
 bash training/intern_vl/internvl_chat/shell/sensenova_si_8M_internvl3_8b.sh  # Or train with SenseNova-SI-8M data
 ```
@@ -882,7 +882,7 @@ uv pip install flash_attn==2.5.8 --no-build-isolation
 **Run training**
 
 ```bash
-bash training/bagel/scripts/train_sensenova_si_800k.sh  #Train with SenseNova-SI-800K data
+bash training/bagel/scripts/train_sensenova_si_800K.sh  #Train with SenseNova-SI-800K data
 
 bash training/bagel/scripts/train_sensenova_si_8M.sh  # Or train with SenseNova-SI-8M data
 ```

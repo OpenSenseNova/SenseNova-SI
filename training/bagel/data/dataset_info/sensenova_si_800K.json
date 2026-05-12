@@ -1,5 +1,5 @@
 {
-    "sensenova_si_800k": {
+    "sensenova_si_800K": {
         "data_dir": "__TRAINING_ROOT__/data/SenseNova-SI-800K/",
         "jsonl_path": "__TRAINING_ROOT__/data/SenseNova-SI-800K/SenseNova-SI-800K.jsonl",
         "num_total_samples": 832132

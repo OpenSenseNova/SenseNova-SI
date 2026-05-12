@@ -26,8 +26,8 @@ TRAINING_ROOT="$(python -c 'import pathlib; print(pathlib.Path("'"${REPO_DIR}"'"
 MODEL_PATH="${MODEL_PATH:-OpenGVLab/InternVL3-8B}"
 NPROC_PER_NODE=${NPROC_PER_NODE:-8}
 NNODES=${WORLD_SIZE:-1}
-RESULTS_DIR="${RESULTS_DIR:-${TRAINING_ROOT}/results/internvl3_8b/sensenova_si_800k}"
-META_PATH="${META_PATH:-${REPO_DIR}/shell/data/sensenova_si_800k.json}"
+RESULTS_DIR="${RESULTS_DIR:-${TRAINING_ROOT}/results/internvl3_8b/sensenova_si_800K}"
+META_PATH="${META_PATH:-${REPO_DIR}/shell/data/sensenova_si_800K.json}"
 
 if [ ! -d "$RESULTS_DIR" ]; then
   mkdir -p "$RESULTS_DIR"
